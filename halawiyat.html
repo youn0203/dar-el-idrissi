@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحلويات - دار الإدريسي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700;800&family=Aref+Ruqaa:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root { --fes-blue: #1a3a5c; --fes-blue-dark: #0f2438; --gold: #c9a227; --gold-light: #e8c84a; --terracotta: #b85c38; --ivory: #faf6f0; --ivory-dark: #f0e8dc; --text-dark: #2a1f1a; --text-muted: #6b5d52; --shadow: 0 4px 20px rgba(26,58,92,0.12); --shadow-hover: 0 8px 30px rgba(26,58,92,0.2); --radius: 16px; --whatsapp: #25d366; }
+        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        html, body { overflow-x: hidden; width: 100%; }
+        body { background: var(--ivory); color: var(--text-dark); font-family: 'Cairo', sans-serif; line-height: 1.7; direction: rtl; }
+        a { text-decoration: none; color: inherit; }
+        img { max-width: 100%; height: auto; display: block; }
+        .site-header { background: linear-gradient(135deg, var(--fes-blue) 0%, var(--fes-blue-dark) 100%); color: #fff; position: relative; overflow: hidden; text-align: center; padding: 30px 20px 20px; border-bottom: 4px solid var(--gold); }
+        .site-logo { font-family: 'Aref Ruqaa', 'Amiri', serif; font-size: 36px; font-weight: 700; color: var(--gold-light); margin-bottom: 5px; }
+        .site-tagline { font-family: 'Amiri', serif; font-size: 20px; font-weight: 700; color: #fff; }
+        .main-nav { background: var(--fes-blue-dark); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 10px; display: flex; justify-content: center; flex-wrap: wrap; }
+        .nav-inner a { color: #fff; padding: 15px 18px; font-size: 15px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; transition: 0.3s; }
+        .nav-inner a:hover, .nav-inner a.active { color: var(--gold-light); background: rgba(201,162,39,0.1); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 25px 15px; }
+        .section-title { font-family: 'Amiri', serif; font-size: 32px; color: var(--fes-blue); text-align: center; margin-bottom: 8px; font-weight: 700; }
+        .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--gold); margin: 12px auto 0; border-radius: 3px; }
+        .section-subtitle { text-align: center; color: var(--text-muted); font-size: 15px; margin-bottom: 30px; margin-top: 8px; }
+        .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--gold); font-weight: 700; margin-bottom: 20px; font-size: 16px; }
+        .back-link:hover { color: var(--terracotta); }
+        .dishes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px; }
+        .dish-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all 0.35s ease; border: 1px solid rgba(201,162,39,0.15); display: flex; flex-direction: column; }
+        .dish-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--gold); }
+        .dish-image { position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--ivory-dark); }
+        .dish-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .dish-card:hover .dish-image img { transform: scale(1.08); }
+        .dish-badge { position: absolute; top: 12px; right: 12px; background: var(--gold); color: var(--fes-blue-dark); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; z-index: 2; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+        .dish-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
+        .dish-title { font-family: 'Amiri', serif; font-size: 21px; font-weight: 700; color: var(--fes-blue); margin-bottom: 6px; }
+        .dish-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 15px; flex: 1; }
+        .btn-order { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--whatsapp); color: #fff; padding: 12px; border-radius: 12px; font-size: 15px; font-weight: 700; transition: all 0.3s; border: none; cursor: pointer; width: 100%; }
+        .btn-order:hover { background: #1ebe5a; transform: scale(1.02); }
+        .whatsapp-float { position: fixed; bottom: 25px; left: 25px; width: 60px; height: 60px; background: var(--whatsapp); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 6px 20px rgba(37,211,102,0.5); z-index: 9999; transition: all 0.3s; animation: pulse 2s infinite; }
+        .whatsapp-float:hover { transform: scale(1.1); background: #1ebe5a; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); } 70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
+        .music-btn { position: fixed; bottom: 25px; right: 25px; width: 50px; height: 50px; background: var(--fes-blue); color: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer; z-index: 9999; border: 2px solid var(--gold); transition: 0.3s; }
+        .music-btn:hover { background: var(--gold); color: var(--fes-blue-dark); transform: scale(1.1); }
+        .site-footer { background: linear-gradient(135deg, var(--fes-blue-dark) 0%, #0a1828 100%); color: #fff; padding: 30px 20px; text-align: center; margin-top: 40px; }
+        .footer-bottom { font-size: 13px; color: rgba(255,255,255,0.6); }
+        @media (max-width: 768px) { .site-logo { font-size: 28px; } .section-title { font-size: 24px; } .dishes-grid { grid-template-columns: 1fr; } .container { padding: 15px 10px; } .whatsapp-float { width: 55px; height: 55px; font-size: 26px; bottom: 18px; left: 18px; } .music-btn { width: 45px; height: 45px; font-size: 18px; bottom: 18px; right: 18px; } }
+    </style>
+</head>
+<body>
+<audio id="bgMusic" loop><source src="https://ia600505.us.archive.org/4/items/cut-627sec/%D9%82%D8%B5%D9%8A%D8%AF%D8%A9%20%D8%A7%D9%84%D8%B2%D8%B1%D8%AF%D8%A9%20%D9%84%D9%84%D9%81%D9%86%D8%A7%D9%86%20%D9%85%D8%AD%D9%85%D8%AF%20%D8%A8%D8%B1%D9%83%D8%A7%D9%85%20%D8%B1%D8%AD%D9%85%D9%87%20%D8%A7%D9%84%D9%84%D9%91%D9%87_%5Bcut_627sec%5D.mp3" type="audio/mpeg"></audio>
+<button class="music-btn" id="musicToggle" title="إيقاف/تشغيل الموسيقى"><i class="fas fa-volume-up" id="musicIcon"></i></button>
+
+<header class="site-header">
+    <div class="site-logo">دار الإدريسي</div>
+    <div class="site-tagline">بنة زمان</div>
+</header>
+
+<nav class="main-nav">
+    <div class="nav-inner">
+        <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
+        <a href="index.html#categories"><i class="fas fa-utensils"></i> الأصناف</a>
+        <a href="https://wa.me/212699312690" target="_blank"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+    </div>
+</nav>
+
+<div class="container">
+    <a href="index.html" class="back-link"><i class="fas fa-arrow-right"></i> العودة إلى قائمة الأصناف</a>
+    <h2 class="section-title">الحلويات</h2>
+    <p class="section-subtitle">حلويات فاسية تقليدية</p>
+    <div class="dishes-grid">
+        <div class="dish-card">
+            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IBHJSWzsiRqIUlwu.jpg" /><span class="dish-badge">حلويات</span></div>
+            <div class="dish-body">
+                <h3 class="dish-title">كعب الغزال</h3>
+                <p class="dish-desc">حلوى فاسية شهيرة باللوز وماء الزهر</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20كعب%20الغزال"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="https://wa.me/212699312690" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<footer class="site-footer"><div class="footer-bottom">© 2025 دار الإدريسي - بنة زمان — جميع الحقوق محفوظة</div></footer>
+<script>(function() { var music = document.getElementById('bgMusic'); var toggleBtn = document.getElementById('musicToggle'); var icon = document.getElementById('musicIcon'); var isPlaying = false; document.addEventListener('click', function start() { if (!isPlaying && music) { music.volume = 0.3; music.play().then(function() { isPlaying = true; icon.className = 'fas fa-volume-up'; }).catch(function() {}); } document.removeEventListener('click', start); }, { once: true }); if (toggleBtn) { toggleBtn.addEventListener('click', function(e) { e.stopPropagation(); if (music.paused) { music.play(); isPlaying = true; icon.className = 'fas fa-volume-up'; } else { music.pause(); isPlaying = false; icon.className = 'fas fa-volume-mute'; } }); } })();</script>
+</body>
+</html>
