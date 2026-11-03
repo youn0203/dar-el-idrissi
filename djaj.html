@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -53,6 +53,10 @@
         .whatsapp-float:hover { transform: scale(1.1); background: #1ebe5a; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); } 70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
 
+        /* زر الموسيقى */
+        .music-btn { position: fixed; bottom: 25px; right: 25px; width: 50px; height: 50px; background: var(--fes-blue); color: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer; z-index: 9999; border: 2px solid var(--gold); transition: 0.3s; }
+        .music-btn:hover { background: var(--gold); color: var(--fes-blue-dark); transform: scale(1.1); }
+
         .site-footer { background: linear-gradient(135deg, var(--fes-blue-dark) 0%, #0a1828 100%); color: #fff; padding: 30px 20px; text-align: center; margin-top: 40px; }
         .footer-bottom { font-size: 13px; color: rgba(255,255,255,0.6); }
 
@@ -62,10 +66,12 @@
             .dishes-grid { grid-template-columns: 1fr; }
             .container { padding: 15px 10px; }
             .whatsapp-float { width: 55px; height: 55px; font-size: 26px; bottom: 18px; left: 18px; }
+            .music-btn { width: 45px; height: 45px; font-size: 18px; bottom: 18px; right: 18px; }
         }
     </style>
 </head>
 <body>
+
 <!-- الموسيقى الخلفية -->
 <audio id="bgMusic" loop>
     <source src="https://ia600505.us.archive.org/4/items/cut-627sec/%D9%82%D8%B5%D9%8A%D8%AF%D8%A9%20%D8%A7%D9%84%D8%B2%D8%B1%D8%AF%D8%A9%20%D9%84%D9%84%D9%81%D9%86%D8%A7%D9%86%20%D9%85%D8%AD%D9%85%D8%AF%20%D8%A8%D8%B1%D9%83%D8%A7%D9%85%20%D8%B1%D8%AD%D9%85%D9%87%20%D8%A7%D9%84%D9%84%D9%91%D9%87_%5Bcut_627sec%5D.mp3" type="audio/mpeg">
@@ -75,6 +81,7 @@
 <button class="music-btn" id="musicToggle" title="إيقاف/تشغيل الموسيقى">
     <i class="fas fa-volume-up" id="musicIcon"></i>
 </button>
+
 <header class="site-header">
     <div class="site-logo">دار الإدريسي</div>
     <div class="site-tagline">بنة زمان</div>
@@ -121,7 +128,7 @@
             </div>
         </div>
         
-        <!-- يمكنك إضافة المزيد من أطباق الدجاج هنا بنفس الطريقة -->
+        <!-- يمكنك إضافة المزيد من أطباق الدجاج هنا -->
     </div>
 </div>
 
@@ -132,6 +139,40 @@
         © 2025 دار الإدريسي - بنة زمان — جميع الحقوق محفوظة
     </div>
 </footer>
+
+<script>
+    // سكريبت الموسيقى
+    const music = document.getElementById('bgMusic');
+    const musicToggle = document.getElementById('musicToggle');
+    const musicIcon = document.getElementById('musicIcon');
+    let isMusicPlaying = false;
+
+    // محاولة تشغيل الموسيقى عند أول نقرة في أي مكان (لتجاوز قيود المتصفح)
+    document.addEventListener('click', function startMusic() {
+        if (!isMusicPlaying) {
+            music.volume = 0.3;
+            music.play().then(() => {
+                isMusicPlaying = true;
+                musicIcon.className = 'fas fa-volume-up';
+            }).catch(() => {});
+        }
+        document.removeEventListener('click', startMusic);
+    }, { once: true });
+
+    // زر التحكم في الموسيقى
+    musicToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (music.paused) {
+            music.play();
+            isMusicPlaying = true;
+            musicIcon.className = 'fas fa-volume-up';
+        } else {
+            music.pause();
+            isMusicPlaying = false;
+            musicIcon.className = 'fas fa-volume-mute';
+        }
+    });
+</script>
 
 </body>
 </html>
