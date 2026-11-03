@@ -110,6 +110,44 @@
             .footer-inner { text-align: center; }
             .category-card { padding: 20px 15px; }
         }
+        /* زر العودة إلى الأعلى */
+.back-to-top {
+    position: fixed;
+    bottom: 90px; /* فوق زر الموسيقى */
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    background: var(--gold);
+    color: var(--fes-blue-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+.back-to-top:hover {
+    background: var(--fes-blue);
+    color: var(--gold);
+    transform: translateY(-3px);
+}
+@media (max-width: 768px) {
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        bottom: 75px; /* فوق زر الموسيقى في الجوال */
+        right: 18px;
+    }
+}
     </style>
 </head>
 <body>
@@ -345,6 +383,26 @@
         }
     });
 </script>
-
+    <script>
+    // زر العودة إلى الأعلى
+    var backToTopBtn = document.getElementById('backToTop');
+    if (backToTopBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        backToTopBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+</script>
+<!-- زر العودة إلى الأعلى -->
+<a href="#" class="back-to-top" id="backToTop" title="العودة إلى الأعلى">
+    <i class="fas fa-arrow-up"></i>
+</a>
 </body>
 </html>
