@@ -141,37 +141,38 @@
 </footer>
 
 <script>
-    // سكريبت الموسيقى
-    const music = document.getElementById('bgMusic');
-    const musicToggle = document.getElementById('musicToggle');
-    const musicIcon = document.getElementById('musicIcon');
-    let isMusicPlaying = false;
+    (function() {
+        var music = document.getElementById('bgMusic');
+        var toggleBtn = document.getElementById('musicToggle');
+        var icon = document.getElementById('musicIcon');
+        var isPlaying = false;
 
-    // محاولة تشغيل الموسيقى عند أول نقرة في أي مكان (لتجاوز قيود المتصفح)
-    document.addEventListener('click', function startMusic() {
-        if (!isMusicPlaying) {
-            music.volume = 0.3;
-            music.play().then(() => {
-                isMusicPlaying = true;
-                musicIcon.className = 'fas fa-volume-up';
-            }).catch(() => {});
-        }
-        document.removeEventListener('click', startMusic);
-    }, { once: true });
+        document.addEventListener('click', function start() {
+            if (!isPlaying && music) {
+                music.volume = 0.3;
+                music.play().then(function() {
+                    isPlaying = true;
+                    icon.className = 'fas fa-volume-up';
+                }).catch(function() {});
+            }
+            document.removeEventListener('click', start);
+        }, { once: true });
 
-    // زر التحكم في الموسيقى
-    musicToggle.addEventListener('click', function(e) {
-        e.stopPropagation();
-        if (music.paused) {
-            music.play();
-            isMusicPlaying = true;
-            musicIcon.className = 'fas fa-volume-up';
-        } else {
-            music.pause();
-            isMusicPlaying = false;
-            musicIcon.className = 'fas fa-volume-mute';
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (music.paused) {
+                    music.play();
+                    isPlaying = true;
+                    icon.className = 'fas fa-volume-up';
+                } else {
+                    music.pause();
+                    isPlaying = false;
+                    icon.className = 'fas fa-volume-mute';
+                }
+            });
         }
-    });
+    })();
 </script>
 
 </body>
