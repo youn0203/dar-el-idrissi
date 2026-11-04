@@ -53,7 +53,6 @@
         .whatsapp-float:hover { transform: scale(1.1); background: #1ebe5a; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); } 70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
 
-        /* زر الموسيقى */
         .music-btn { position: fixed; bottom: 25px; right: 25px; width: 50px; height: 50px; background: var(--fes-blue); color: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer; z-index: 9999; border: 2px solid var(--gold); transition: 0.3s; }
         .music-btn:hover { background: var(--gold); color: var(--fes-blue-dark); transform: scale(1.1); }
 
@@ -72,12 +71,10 @@
 </head>
 <body>
 
-<!-- الموسيقى الخلفية -->
 <audio id="bgMusic" loop>
     <source src="https://ia600505.us.archive.org/4/items/cut-627sec/%D9%82%D8%B5%D9%8A%D8%AF%D8%A9%20%D8%A7%D9%84%D8%B2%D8%B1%D8%AF%D8%A9%20%D9%84%D9%84%D9%81%D9%86%D8%A7%D9%86%20%D9%85%D8%AD%D9%85%D8%AF%20%D8%A8%D8%B1%D9%83%D8%A7%D9%85%20%D8%B1%D8%AD%D9%85%D9%87%20%D8%A7%D9%84%D9%84%D9%91%D9%87_%5Bcut_627sec%5D.mp3" type="audio/mpeg">
 </audio>
 
-<!-- زر التحكم في الموسيقى -->
 <button class="music-btn" id="musicToggle" title="إيقاف/تشغيل الموسيقى">
     <i class="fas fa-volume-up" id="musicIcon"></i>
 </button>
@@ -91,7 +88,7 @@
     <div class="nav-inner">
         <a href="index.html"><i class="fas fa-home"></i> الرئيسية</a>
         <a href="index.html#categories"><i class="fas fa-utensils"></i> الأصناف</a>
-        <a href="gallery.html"><i class="fas fa-images"></i> صورنا</a> <!-- أضف هذا السطر -->
+        <a href="gallery.html"><i class="fas fa-images"></i> صورنا</a>
         <a href="https://wa.me/212699312690" target="_blank"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
     </div>
 </nav>
@@ -100,36 +97,138 @@
     <a href="index.html" class="back-link"><i class="fas fa-arrow-right"></i> العودة إلى قائمة الأصناف</a>
     
     <h2 class="section-title">أطباق الدجاج</h2>
-    <p class="section-subtitle">أطباق دجاج تقليدية محضرة بحب</p>
+    <p class="section-subtitle">تشكيلة واسعة من أطباق الدجاج الفاسي</p>
 
     <div class="dishes-grid">
-        <!-- الطبق 1 -->
-        <div class="dish-card">
-            <div class="dish-image">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" />
-                <span class="dish-badge">مميز</span>
-            </div>
-            <div class="dish-body">
-                <h3 class="dish-title">دجاج معمر ومشوي في الفرن</h3>
-                <p class="dish-desc">دجاج محشو بالتوابل والأرز، مشوي حتى الذهبي</p>
-                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20معمر"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
-            </div>
-        </div>
-
-        <!-- الطبق 2 -->
+        <!-- الطبق 1: دجاج محمر بالزيتون والليمون مصير -->
         <div class="dish-card">
             <div class="dish-image">
                 <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IsmiMGZbJOOwtELK.jpg" />
                 <span class="dish-badge">تقليدي</span>
             </div>
             <div class="dish-body">
-                <h3 class="dish-title">دجاج محمر ومدغمر</h3>
-                <p class="dish-desc">دجاج محمر بالتوابل المغربية ومدغمر بصلصة غنية</p>
-                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20محمر"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+                <h3 class="dish-title">دجاج محمر بالزيتون والليمون مصير</h3>
+                <p class="dish-desc">دجاج محمر بالتوابل مع الزيتون والليمون المصير</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20محمر%20بالزيتون"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
             </div>
         </div>
-        
-        <!-- يمكنك إضافة المزيد من أطباق الدجاج هنا -->
+
+        <!-- الطبق 2: دجاج مقلي بالبطاطا -->
+        <div class="dish-card">
+            <div class="dish-image">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" />
+                <span class="dish-badge">مقلي</span>
+            </div>
+            <div class="dish-body">
+                <h3 class="dish-title">دجاج مقلي بالبطاطا</h3>
+                <p class="dish-desc">قطع دجاج مقلية مقرمشة مع البطاطا المقلية</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20مقلي%20بالبطاطا"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- الطبق 3: دجاج مشوي بالفرن -->
+        <div class="dish-card">
+            <div class="dish-image">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" />
+                <span class="dish-badge">مشوي</span>
+            </div>
+            <div class="dish-body">
+                <h3 class="dish-title">دجاج مشوي بالفرن</h3>
+                <p class="dish-desc">دجاج مشوي في الفرن بتوابل مغربية</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20مشوي"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- الطبق 4: دجاج معمر بالمعادنوس -->
+        <div class="dish-card">
+            <div class="dish-image">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" />
+                <span class="dish-badge">معمر</span>
+            </div>
+            <div class="dish-body">
+                <h3 class="dish-title">دجاج معمر بالمعادنوس</h3>
+                <p class="dish-desc">دجاج محشو بالبقدونس والثوم</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20معمر%20بالمعادنوس"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- الطبق 5: دجاج معمر بالقشاوش -->
+        <div class="dish-card">
+            <div class="dish-image">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" />
+                <span class="dish-badge">معمر</span>
+            </div>
+            <div class="dish-body">
+                <h3 class="dish-title">دجاج معمر بالقشاوش</h3>
+                <p class="dish-desc">دجاج محشو بالجبن والقشدة</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20معمر%20بالقشاوش"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- الطبق 6: دجاج معمر بشعرية -->
+        <div class="dish-card">
+            <div class="dish-image">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" />
+                <span class="dish-badge">معمر</span>
+            </div>
+            <div class="dish-body">
+                <h3 class="dish-title">دجاج معمر بشعرية</h3>
+                <p class="dish-desc">دجاج محشو بالشعرية الصينية</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20معمر%20بشعرية"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- الطبق 7: دجاج معمر بالروز -->
+        <div class="dish-card">
+            <div class="dish-image">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" />
+                <span class="dish-badge">معمر</span>
+            </div>
+            <div class="dish-body">
+                <h3 class="dish-title">دجاج معمر بالروز</h3>
+                <p class="dish-desc">دجاج محشو بالأرز والتوابل</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20معمر%20بالروز"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- الطبق 8: دجاج معمر بالقمرون -->
+        <div class="dish-card">
+            <div class="dish-image">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" />
+                <span class="dish-badge">معمر</span>
+            </div>
+            <div class="dish-body">
+                <h3 class="dish-title">دجاج معمر بالقمرون</h3>
+                <p class="dish-desc">دجاج محشو بالقمرون (الجمبري)</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20معمر%20بالقمرون"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- الطبق 9: دجاج معمر بالكفتة -->
+        <div class="dish-card">
+            <div class="dish-image">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" />
+                <span class="dish-badge">معمر</span>
+            </div>
+            <div class="dish-body">
+                <h3 class="dish-title">دجاج معمر بالكفتة</h3>
+                <p class="dish-desc">دجاج محشو بالكفتة المفرومة</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20معمر%20بالكفتة"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- الطبق 10: دجاج مفور بالخضرة صوطي -->
+        <div class="dish-card">
+            <div class="dish-image">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" />
+                <span class="dish-badge">مفور</span>
+            </div>
+            <div class="dish-body">
+                <h3 class="dish-title">دجاج مفور بالخضرة صوطي</h3>
+                <p class="dish-desc">دجاج مفور مع الخضار في صلصة الصوطي</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20مفور%20بالخضرة"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
     </div>
 </div>
 
