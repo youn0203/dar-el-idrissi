@@ -46,6 +46,45 @@
         .site-footer { background: linear-gradient(135deg, var(--fes-blue-dark) 0%, #0a1828 100%); color: #fff; padding: 30px 20px; text-align: center; margin-top: 40px; }
         .footer-bottom { font-size: 13px; color: rgba(255,255,255,0.6); }
         @media (max-width: 768px) { .site-logo { font-size: 28px; } .section-title { font-size: 24px; } .dishes-grid { grid-template-columns: 1fr; } .container { padding: 15px 10px; } .whatsapp-float { width: 55px; height: 55px; font-size: 26px; bottom: 18px; left: 18px; } .music-btn { width: 45px; height: 45px; font-size: 18px; bottom: 18px; right: 18px; } }
+   /* زر العودة إلى الأعلى */
+.back-to-top {
+    position: fixed;
+    bottom: 90px; /* فوق زر الموسيقى */
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    background: var(--gold);
+    color: var(--fes-blue-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    z-index: 9998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+.back-to-top:hover {
+    background: var(--fes-blue);
+    color: var(--gold);
+    transform: translateY(-3px);
+}
+@media (max-width: 768px) {
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+        bottom: 75px; /* فوق زر الموسيقى في الجوال */
+        right: 18px;
+    }
+}
     </style>
 </head>
 <body>
@@ -151,9 +190,31 @@
         </div>
     </div>
 </div>
-
+<!-- زر العودة إلى الأعلى -->
+<a href="#" class="back-to-top" id="backToTop" title="العودة إلى الأعلى">
+    <i class="fas fa-arrow-up"></i>
+</a>
 <a href="https://wa.me/212699312690" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <footer class="site-footer"><div class="footer-bottom">© 2025 دار الإدريسي - بنة زمان — جميع الحقوق محفوظة</div></footer>
 <script>(function() { var music = document.getElementById('bgMusic'); var toggleBtn = document.getElementById('musicToggle'); var icon = document.getElementById('musicIcon'); var isPlaying = false; document.addEventListener('click', function start() { if (!isPlaying && music) { music.volume = 0.3; music.play().then(function() { isPlaying = true; icon.className = 'fas fa-volume-up'; }).catch(function() {}); } document.removeEventListener('click', start); }, { once: true }); if (toggleBtn) { toggleBtn.addEventListener('click', function(e) { e.stopPropagation(); if (music.paused) { music.play(); isPlaying = true; icon.className = 'fas fa-volume-up'; } else { music.pause(); isPlaying = false; icon.className = 'fas fa-volume-mute'; } }); } })();</script>
+<script>
+    // زر العودة إلى الأعلى
+    (function() {
+        var backToTopBtn = document.getElementById('backToTop');
+        if (backToTopBtn) {
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+            backToTopBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    })();
+</script>
 </body>
 </html>
