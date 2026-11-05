@@ -231,7 +231,10 @@
         </div>
     </div>
 </div>
-
+<!-- زر العودة إلى الأعلى -->
+<a href="#" class="back-to-top" id="backToTop" title="العودة إلى الأعلى">
+    <i class="fas fa-arrow-up"></i>
+</a>
 <a href="https://wa.me/212699312690" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <footer class="site-footer">
@@ -274,6 +277,24 @@
         }
     })();
 </script>
-
+<script>
+    // زر العودة إلى الأعلى
+    (function() {
+        var backToTopBtn = document.getElementById('backToTop');
+        if (backToTopBtn) {
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+            backToTopBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    })();
+</script>
 </body>
 </html>
