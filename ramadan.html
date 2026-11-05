@@ -334,4 +334,101 @@
             <div class="dish-body">
                 <h3 class="dish-title">البصارة بالفت والزيت العلونة</h3>
                 <p class="dish-desc">بصارة بالفت والزيت العلونة</p>
-                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20البصارة%20بالفت%20والزيت%20العلونة"><i class="fab fa
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20البصارة%20بالفت%20والزيت%20العلونة"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- 27. البصارة جلبانة (بكاصي) -->
+        <div class="dish-card">
+            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" /><span class="dish-badge">بصارة</span></div>
+            <div class="dish-body">
+                <h3 class="dish-title">البصارة جلبانة (بكاصي)</h3>
+                <p class="dish-desc">بصارة بالجلبانة (البازلاء)</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20البصارة%20جلبانة"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- 28. الحريشات الصغار معمرين -->
+        <div class="dish-card">
+            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IBHJSWzsiRqIUlwu.jpg" /><span class="dish-badge">حرشة</span></div>
+            <div class="dish-body">
+                <h3 class="dish-title">الحريشات الصغار معمرين</h3>
+                <p class="dish-desc">حريشات صغيرة محشوة</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20الحريشات%20الصغار%20معمرين"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- 29. حرشة صغيرة عادية -->
+        <div class="dish-card">
+            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IBHJSWzsiRqIUlwu.jpg" /><span class="dish-badge">حرشة</span></div>
+            <div class="dish-body">
+                <h3 class="dish-title">حرشة صغيرة عادية</h3>
+                <p class="dish-desc">حرشة صغيرة تقليدية</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20حرشة%20صغيرة%20عادية"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- 30. حرشة صغيرة معمرة بالزيتون والفرماج -->
+        <div class="dish-card">
+            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IBHJSWzsiRqIUlwu.jpg" /><span class="dish-badge">حرشة</span></div>
+            <div class="dish-body">
+                <h3 class="dish-title">حرشة صغيرة معمرة بالزيتون والفرماج</h3>
+                <p class="dish-desc">حرشة صغيرة محشوة بالزيتون والجبن</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20حرشة%20معمرة%20بالزيتون%20والفرماج"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- زر العودة إلى الأعلى -->
+<a href="#" class="back-to-top" id="backToTop" title="العودة إلى الأعلى">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<a href="https://wa.me/212699312690" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<footer class="site-footer"><div class="footer-bottom">© 2025 دار الإدريسي - بنة زمان — جميع الحقوق محفوظة</div></footer>
+
+<script>
+    // سكريبت الموسيقى
+    (function() { 
+        var music = document.getElementById('bgMusic'); 
+        var toggleBtn = document.getElementById('musicToggle'); 
+        var icon = document.getElementById('musicIcon'); 
+        var isPlaying = false; 
+        document.addEventListener('click', function start() { 
+            if (!isPlaying && music) { 
+                music.volume = 0.3; 
+                music.play().then(function() { isPlaying = true; icon.className = 'fas fa-volume-up'; }).catch(function() {}); 
+            } 
+            document.removeEventListener('click', start); 
+        }, { once: true }); 
+        if (toggleBtn) { 
+            toggleBtn.addEventListener('click', function(e) { 
+                e.stopPropagation(); 
+                if (music.paused) { music.play(); isPlaying = true; icon.className = 'fas fa-volume-up'; } 
+                else { music.pause(); isPlaying = false; icon.className = 'fas fa-volume-mute'; } 
+            }); 
+        } 
+    })();
+
+    // زر العودة إلى الأعلى
+    (function() {
+        var backToTopBtn = document.getElementById('backToTop');
+        if (backToTopBtn) {
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+            backToTopBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    })();
+</script>
+
+</body>
+</html>
