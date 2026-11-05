@@ -43,9 +43,15 @@
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); } 70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
         .music-btn { position: fixed; bottom: 25px; right: 25px; width: 50px; height: 50px; background: var(--fes-blue); color: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer; z-index: 9999; border: 2px solid var(--gold); transition: 0.3s; }
         .music-btn:hover { background: var(--gold); color: var(--fes-blue-dark); transform: scale(1.1); }
+        
+        /* زر العودة إلى الأعلى */
+        .back-to-top { position: fixed; bottom: 90px; right: 25px; width: 50px; height: 50px; background: var(--gold); color: var(--fes-blue-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9998; opacity: 0; visibility: hidden; transition: all 0.3s ease; text-decoration: none; }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: var(--fes-blue); color: var(--gold); transform: translateY(-3px); }
+
         .site-footer { background: linear-gradient(135deg, var(--fes-blue-dark) 0%, #0a1828 100%); color: #fff; padding: 30px 20px; text-align: center; margin-top: 40px; }
         .footer-bottom { font-size: 13px; color: rgba(255,255,255,0.6); }
-        @media (max-width: 768px) { .site-logo { font-size: 28px; } .section-title { font-size: 24px; } .dishes-grid { grid-template-columns: 1fr; } .container { padding: 15px 10px; } .whatsapp-float { width: 55px; height: 55px; font-size: 26px; bottom: 18px; left: 18px; } .music-btn { width: 45px; height: 45px; font-size: 18px; bottom: 18px; right: 18px; } }
+        @media (max-width: 768px) { .site-logo { font-size: 28px; } .section-title { font-size: 24px; } .dishes-grid { grid-template-columns: 1fr; } .container { padding: 15px 10px; } .whatsapp-float { width: 55px; height: 55px; font-size: 26px; bottom: 18px; left: 18px; } .music-btn { width: 45px; height: 45px; font-size: 18px; bottom: 18px; right: 18px; } .back-to-top { width: 45px; height: 45px; font-size: 18px; bottom: 75px; right: 18px; } }
     </style>
 </head>
 <body>
@@ -69,8 +75,190 @@
 <div class="container">
     <a href="index.html" class="back-link"><i class="fas fa-arrow-right"></i> العودة إلى قائمة الأصناف</a>
     <h2 class="section-title">الحلويات</h2>
-    <p class="section-subtitle">حلويات فاسية تقليدية</p>
+    <p class="section-subtitle">تشكيلة من الحلويات الفاسية التقليدية</p>
     
     <div class="dishes-grid">
+        <!-- 1. كعب الغزال -->
         <div class="dish-card">
-            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IBHJSW
+            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IBHJSWzsiRqIUlwu.jpg" /><span class="dish-badge">حلويات</span></div>
+            <div class="dish-body">
+                <h3 class="dish-title">كعب الغزال</h3>
+                <p class="dish-desc">حلوى فاسية شهيرة باللوز وماء الزهر</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20كعب%20الغزال"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- 2. غريبة العقدة -->
+        <div class="dish-card">
+            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IBHJSWzsiRqIUlwu.jpg" /><span class="dish-badge">غريبة</span></div>
+            <div class="dish-body">
+                <h3 class="dish-title">غريبة العقدة</h3>
+                <p class="dish-desc">غريبة تقليدية بشكل العقدة</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20غريبة%20العقدة"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- 3. غريبة البهلة -->
+        <div class="dish-card">
+            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IBHJSWzsiRqIUlwu.jpg" /><span class="dish-badge">غريبة</span></div>
+            <div class="dish-body">
+                <h3 class="dish-title">غريبة البهلة</h3>
+                <p class="dish-desc">غريبة البهلة التقليدية</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20غريبة%20البهلة"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- 4. غريبة سميدة والكوك -->
+        <div class="dish-card">
+            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IBHJSWzsiRqIUlwu.jpg" /><span class="dish-badge">غريبة</span></div>
+            <div class="dish-body">
+                <h3 class="dish-title">غريبة سميدة والكوك</h3>
+                <p class="dish-desc">غريبة بالسميد وجوز الهند</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20غريبة%20سميدة%20والكوك"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- 5. غريبة الكاوكاو -->
+        <div class="dish-card">
+            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IBHJSWzsiRqIUlwu.jpg" /><span class="dish-badge">غريبة</span></div>
+            <div class="dish-body">
+                <h3 class="dish-title">غريبة الكاوكاو</h3>
+                <p class="dish-desc">غريبة بالفول السوداني</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20غريبة%20الكاوكاو"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- 6. غريبة فورص والكوك -->
+        <div class="dish-card">
+            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IBHJSWzsiRqIUlwu.jpg" /><span class="dish-badge">غريبة</span></div>
+            <div class="dish-body">
+                <h3 class="dish-title">غريبة فورص والكوك</h3>
+                <p class="dish-desc">غريبة بالفورص وجوز الهند</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20غريبة%20فورص%20والكوك"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- 7. غريبة ملوزة -->
+        <div class="dish-card">
+            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IBHJSWzsiRqIUlwu.jpg" /><span class="dish-badge">غريبة</span></div>
+            <div class="dish-body">
+                <h3 class="dish-title">غريبة ملوزة</h3>
+                <p class="dish-desc">غريبة باللوز</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20غريبة%20ملوزة"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- 8. فقاص بلدي -->
+        <div class="dish-card">
+            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IBHJSWzsiRqIUlwu.jpg" /><span class="dish-badge">فقاص</span></div>
+            <div class="dish-body">
+                <h3 class="dish-title">فقاص بلدي</h3>
+                <p class="dish-desc">فقاص تقليدي بلدي</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20فقاص%20بلدي"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- 9. فقاص بالفواكه الجافة -->
+        <div class="dish-card">
+            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IBHJSWzsiRqIUlwu.jpg" /><span class="dish-badge">فقاص</span></div>
+            <div class="dish-body">
+                <h3 class="dish-title">فقاص بالفواكه الجافة</h3>
+                <p class="dish-desc">فقاص بالفواكه الجافة</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20فقاص%20بالفواكه%20الجافة"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- 10. فقاص مسوس -->
+        <div class="dish-card">
+            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IBHJSWzsiRqIUlwu.jpg" /><span class="dish-badge">فقاص</span></div>
+            <div class="dish-body">
+                <h3 class="dish-title">فقاص مسوس</h3>
+                <p class="dish-desc">فقاص مسوس (طري)</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20فقاص%20مسوس"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- 11. فقاص المالح بجميع انواعه -->
+        <div class="dish-card">
+            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IBHJSWzsiRqIUlwu.jpg" /><span class="dish-badge">فقاص</span></div>
+            <div class="dish-body">
+                <h3 class="dish-title">فقاص المالح بجميع انواعه</h3>
+                <p class="dish-desc">فقاص مالح بأنواعه</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20فقاص%20المالح"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- 12. فقاص بريستيج -->
+        <div class="dish-card">
+            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IBHJSWzsiRqIUlwu.jpg" /><span class="dish-badge">فقاص</span></div>
+            <div class="dish-body">
+                <h3 class="dish-title">فقاص بريستيج</h3>
+                <p class="dish-desc">فقاص بريستيج الفاخر</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20فقاص%20بريستيج"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- 13. صابلي -->
+        <div class="dish-card">
+            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IBHJSWzsiRqIUlwu.jpg" /><span class="dish-badge">صابلي</span></div>
+            <div class="dish-body">
+                <h3 class="dish-title">صابلي</h3>
+                <p class="dish-desc">صابلي تقليدي بالمعمول</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20صابلي"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- زر العودة إلى الأعلى -->
+<a href="#" class="back-to-top" id="backToTop" title="العودة إلى الأعلى">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<a href="https://wa.me/212699312690" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<footer class="site-footer"><div class="footer-bottom">© 2025 دار الإدريسي - بنة زمان — جميع الحقوق محفوظة</div></footer>
+
+<script>
+    // سكريبت الموسيقى
+    (function() { 
+        var music = document.getElementById('bgMusic'); 
+        var toggleBtn = document.getElementById('musicToggle'); 
+        var icon = document.getElementById('musicIcon'); 
+        var isPlaying = false; 
+        document.addEventListener('click', function start() { 
+            if (!isPlaying && music) { 
+                music.volume = 0.3; 
+                music.play().then(function() { isPlaying = true; icon.className = 'fas fa-volume-up'; }).catch(function() {}); 
+            } 
+            document.removeEventListener('click', start); 
+        }, { once: true }); 
+        if (toggleBtn) { 
+            toggleBtn.addEventListener('click', function(e) { 
+                e.stopPropagation(); 
+                if (music.paused) { music.play(); isPlaying = true; icon.className = 'fas fa-volume-up'; } 
+                else { music.pause(); isPlaying = false; icon.className = 'fas fa-volume-mute'; } 
+            }); 
+        } 
+    })();
+
+    // زر العودة إلى الأعلى
+    (function() {
+        var backToTopBtn = document.getElementById('backToTop');
+        if (backToTopBtn) {
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+            backToTopBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    })();
+</script>
+
+</body>
+</html>
