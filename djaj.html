@@ -300,4 +300,126 @@
         <div class="dish-card">
             <div class="dish-gallery-container">
                 <div class="main-image-container">
-                    <img class="main-display-image" id="mainImage_9" src="https://raw.githubusercontent.com/youn
+                    <img class="main-display-image" id="mainImage_9" src="https://raw.githubusercontent.com/youn        <!-- ========== الطبق 9: دجاج معمر بالكفتة ========== -->
+        <div class="dish-card">
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_9" src="https://raw.githubusercontent.com/youn0203/dar-el-idrissi/main/01-chicken-olives-preserved-lemon%2Braid.jpeg" alt="دجاج معمر بالكفتة" />
+                    <span class="dish-badge">معمر</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_9', 'https://raw.githubusercontent.com/youn0203/dar-el-idrissi/main/01-chicken-olives-preserved-lemon%2Braid.jpeg', this)">
+                        <img src="https://raw.githubusercontent.com/youn0203/dar-el-idrissi/main/01-chicken-olives-preserved-lemon%2Braid.jpeg" alt="الطبق" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_9', 'https://raw.githubusercontent.com/youn0203/dar-el-idrissi/main/01-chicken-olives-preserved-lemon-.jpg', this)">
+                        <img src="https://raw.githubusercontent.com/youn0203/dar-el-idrissi/main/01-chicken-olives-preserved-lemon-.jpg" alt="صورة إضافية" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_9', 'https://raw.githubusercontent.com/youn0203/dar-el-idrissi/main/01-chicken-olives-preserved-lemon-%20delivri.jpg', this)">
+                        <img src="https://raw.githubusercontent.com/youn0203/dar-el-idrissi/main/01-chicken-olives-preserved-lemon-%20delivri.jpg" alt="الديليفري" />
+                    </div>
+                </div>
+            </div>
+            <div class="dish-body">
+                <h3 class="dish-title">دجاج معمر بالكفتة</h3>
+                <p class="dish-desc">دجاج محشو بالكفتة المفرومة</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20معمر%20بالكفتة"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+        <!-- ========== الطبق 10: دجاج مفور بالخضرة صوطي ========== -->
+        <div class="dish-card">
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_10" src="https://raw.githubusercontent.com/youn0203/dar-el-idrissi/main/01-chicken-olives-preserved-lemon-.jpg" alt="دجاج مفور بالخضرة صوطي" />
+                    <span class="dish-badge">مفور</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_10', 'https://raw.githubusercontent.com/youn0203/dar-el-idrissi/main/01-chicken-olives-preserved-lemon-.jpg', this)">
+                        <img src="https://raw.githubusercontent.com/youn0203/dar-el-idrissi/main/01-chicken-olives-preserved-lemon-.jpg" alt="الطبق" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_10', 'https://raw.githubusercontent.com/youn0203/dar-el-idrissi/main/01-chicken-olives-preserved-lemon%2Braid.jpeg', this)">
+                        <img src="https://raw.githubusercontent.com/youn0203/dar-el-idrissi/main/01-chicken-olives-preserved-lemon%2Braid.jpeg" alt="صورة إضافية" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_10', 'https://raw.githubusercontent.com/youn0203/dar-el-idrissi/main/01-chicken-olives-preserved-lemon-%20delivri.jpg', this)">
+                        <img src="https://raw.githubusercontent.com/youn0203/dar-el-idrissi/main/01-chicken-olives-preserved-lemon-%20delivri.jpg" alt="الديليفري" />
+                    </div>
+                </div>
+            </div>
+            <div class="dish-body">
+                <h3 class="dish-title">دجاج مفور بالخضرة صوطي</h3>
+                <p class="dish-desc">دجاج مفور مع الخضار في صلصة الصوطي</p>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20مفور%20بالخضرة"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- زر العودة إلى الأعلى -->
+<a href="#" class="back-to-top" id="backToTop" title="العودة إلى الأعلى">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
+<a href="https://wa.me/212699312690" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<footer class="site-footer"><div class="footer-bottom">© 2025 دار الإدريسي - بنة زمان — جميع الحقوق محفوظة</div></footer>
+
+<script>
+    // دالة تبديل الصورة الرئيسية داخل معرض كل طبق
+    function changeMainImage(mainImageId, newImageSrc, clickedThumbnail) {
+        // 1. تغيير الصورة الكبيرة
+        document.getElementById(mainImageId).src = newImageSrc;
+
+        // 2. إزالة التحديد من جميع الصور المصغرة في نفس المعرض
+        var parent = clickedThumbnail.parentElement;
+        var thumbs = parent.getElementsByClassName('thumbnail-wrapper');
+        for (var i = 0; i < thumbs.length; i++) {
+            thumbs[i].classList.remove('active');
+        }
+
+        // 3. إضافة التحديد للصورة التي تم الضغط عليها
+        clickedThumbnail.classList.add('active');
+    }
+
+    // سكريبت الموسيقى
+    (function() { 
+        var music = document.getElementById('bgMusic'); 
+        var toggleBtn = document.getElementById('musicToggle'); 
+        var icon = document.getElementById('musicIcon'); 
+        var isPlaying = false; 
+        document.addEventListener('click', function start() { 
+            if (!isPlaying && music) { 
+                music.volume = 0.3; 
+                music.play().then(function() { isPlaying = true; icon.className = 'fas fa-volume-up'; }).catch(function() {}); 
+            } 
+            document.removeEventListener('click', start); 
+        }, { once: true }); 
+        if (toggleBtn) { 
+            toggleBtn.addEventListener('click', function(e) { 
+                e.stopPropagation(); 
+                if (music.paused) { music.play(); isPlaying = true; icon.className = 'fas fa-volume-up'; } 
+                else { music.pause(); isPlaying = false; icon.className = 'fas fa-volume-mute'; } 
+            }); 
+        } 
+    })();
+
+    // زر العودة إلى الأعلى
+    (function() {
+        var backToTopBtn = document.getElementById('backToTop');
+        if (backToTopBtn) {
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+            backToTopBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+    })();
+</script>
+
+</body>
+</html>
