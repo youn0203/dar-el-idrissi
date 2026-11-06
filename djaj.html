@@ -30,71 +30,67 @@
         .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--gold); font-weight: 700; margin-bottom: 20px; font-size: 16px; }
         .back-link:hover { color: var(--terracotta); }
 
-        .dishes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px; }
+        .dishes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-bottom: 40px; }
         .dish-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all 0.35s ease; border: 1px solid rgba(201,162,39,0.15); display: flex; flex-direction: column; }
         .dish-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--gold); }
 
-        /* --- تصميم معرض الصور في البطاقة --- */
-        .dish-image-gallery {
+        /* --- تصميم معرض الصور التفاعلي --- */
+        .dish-gallery-container {
             position: relative;
+            width: 100%;
+            background: var(--ivory-dark);
+        }
+        
+        .main-image-container {
             width: 100%;
             aspect-ratio: 4/3;
             overflow: hidden;
-            background: var(--ivory-dark);
+            position: relative;
         }
-        .gallery-main-img {
+        
+        .main-display-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: opacity 0.3s ease;
         }
-        .dish-card:hover .gallery-main-img {
-            transform: scale(1.05);
-        }
-        
-        /* شارة الطبق */
-        .dish-badge { position: absolute; top: 12px; right: 12px; background: var(--gold); color: var(--fes-blue-dark); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; z-index: 5; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
 
-        /* الصور المصغرة (تحت الصورة الرئيسية) */
-        .gallery-thumbnails {
+        /* الصور المصغرة */
+        .thumbnails-row {
             display: flex;
             gap: 10px;
             padding: 10px;
             background: #fff;
-            border-bottom: 1px solid rgba(201,162,39,0.15);
+            border-top: 1px solid rgba(201,162,39,0.15);
+            justify-content: center;
         }
-        .gallery-thumb {
-            width: 60px;
-            height: 60px;
+
+        .thumbnail-wrapper {
+            width: 65px;
+            height: 65px;
             border-radius: 8px;
-            object-fit: cover;
+            overflow: hidden;
             cursor: pointer;
             border: 2px solid transparent;
             transition: all 0.3s ease;
             opacity: 0.7;
+            position: relative;
         }
-        .gallery-thumb:hover, .gallery-thumb.active {
+
+        .thumbnail-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumbnail-wrapper:hover, .thumbnail-wrapper.active {
             border-color: var(--gold);
             opacity: 1;
             transform: scale(1.05);
         }
-        /* مكان صورة الديليفري (يمكن استبدالها لاحقاً) */
-        .gallery-thumb-delivery {
-            width: 60px;
-            height: 60px;
-            border-radius: 8px;
-            background: rgba(26, 58, 92, 0.1);
-            border: 2px dashed var(--gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--fes-blue);
-            font-size: 10px;
-            font-weight: 700;
-            cursor: not-allowed;
-            text-align: center;
-            line-height: 1.2;
-        }
+
+        /* شارة الطبق */
+        .dish-badge { position: absolute; top: 12px; right: 12px; background: var(--gold); color: var(--fes-blue-dark); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; z-index: 5; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
 
         .dish-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
         .dish-title { font-family: 'Amiri', serif; font-size: 21px; font-weight: 700; color: var(--fes-blue); margin-bottom: 6px; }
@@ -140,17 +136,32 @@
     
     <div class="dishes-grid">
         
-        <!-- 1. دجاج محمر بالزيتون والليمون مصير -->
+        <!-- الطبق 1 (مع الروابط الحقيقية) -->
         <div class="dish-card">
-            <div class="dish-image-gallery">
-                <img class="gallery-main-img" id="mainImg1" src="https://i.postimg.cc/3xpG4sVq/1.jpg" alt="دجاج محمر في الرياض" />
-                <span class="dish-badge">تقليدي</span>
+            <div class="dish-gallery-container">
+                <!-- الصورة الرئيسية (الكبيرة) -->
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_1" src="https://i.postimg.cc/rwVWQMgJ/01-chicken-olives-preserved-lemon-raid.jpg" alt="دجاج محمر في الرياض" />
+                    <span class="dish-badge">تقليدي</span>
+                </div>
+                
+                <!-- شريط الصور المصغرة (التبديل) -->
+                <div class="thumbnails-row" id="thumbnails_1">
+                    <!-- صورة الطبق -->
+                    <div class="thumbnail-wrapper active" onclick="swapImage('mainImage_1', 'https://i.postimg.cc/BnSDM4NT/01-chicken-olives-preserved-lemon.png', this)">
+                        <img src="https://i.postimg.cc/BnSDM4NT/01-chicken-olives-preserved-lemon.png" alt="دجاج محمر" />
+                    </div>
+                    <!-- صورة الديليفري -->
+                    <div class="thumbnail-wrapper" onclick="swapImage('mainImage_1', 'https://i.postimg.cc/MKbV7v0c/01-chicken-olives-preserved-lemon-delivri.jpg', this)">
+                        <img src="https://i.postimg.cc/MKbV7v0c/01-chicken-olives-preserved-lemon-delivri.jpg" alt="ديليفري" />
+                    </div>
+                    <!-- صورة الرياض (لتكون الصورة الثالثة في الشريط) -->
+                    <div class="thumbnail-wrapper" onclick="swapImage('mainImage_1', 'https://i.postimg.cc/rwVWQMgJ/01-chicken-olives-preserved-lemon-raid.jpg', this)">
+                        <img src="https://i.postimg.cc/rwVWQMgJ/01-chicken-olives-preserved-lemon-raid.jpg" alt="الرياض" />
+                    </div>
+                </div>
             </div>
-            <div class="gallery-thumbnails">
-                <img class="gallery-thumb active" src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/IsmiMGZbJOOwtELK.jpg" 
-                     onclick="changeImage('mainImg1', this.src, this)" alt="دجاج محمر" />
-                <div class="gallery-thumb-delivery">صورة<br>الديليفري</div>
-            </div>
+            
             <div class="dish-body">
                 <h3 class="dish-title">دجاج محمر بالزيتون والليمون مصير</h3>
                 <p class="dish-desc">دجاج محمر بالتوابل مع الزيتون والليمون المصير</p>
@@ -158,168 +169,8 @@
             </div>
         </div>
 
-        <!-- 2. دجاج مقلي بالبطاطا -->
-        <div class="dish-card">
-            <div class="dish-image-gallery">
-                <img class="gallery-main-img" id="mainImg2" src="https://i.postimg.cc/3xpG4sVq/1.jpg" alt="دجاج مقلي في الرياض" />
-                <span class="dish-badge">مقلي</span>
-            </div>
-            <div class="gallery-thumbnails">
-                <img class="gallery-thumb active" src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" 
-                     onclick="changeImage('mainImg2', this.src, this)" alt="دجاج مقلي" />
-                <div class="gallery-thumb-delivery">صورة<br>الديليفري</div>
-            </div>
-            <div class="dish-body">
-                <h3 class="dish-title">دجاج مقلي بالبطاطا</h3>
-                <p class="dish-desc">قطع دجاج مقلية مقرمشة مع البطاطا المقلية</p>
-                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20مقلي%20بالبطاطا"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
-            </div>
-        </div>
-
-        <!-- 3. دجاج مشوي بالفرن -->
-        <div class="dish-card">
-            <div class="dish-image-gallery">
-                <img class="gallery-main-img" id="mainImg3" src="https://i.postimg.cc/3xpG4sVq/1.jpg" alt="دجاج مشوي في الرياض" />
-                <span class="dish-badge">مشوي</span>
-            </div>
-            <div class="gallery-thumbnails">
-                <img class="gallery-thumb active" src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" 
-                     onclick="changeImage('mainImg3', this.src, this)" alt="دجاج مشوي" />
-                <div class="gallery-thumb-delivery">صورة<br>الديليفري</div>
-            </div>
-            <div class="dish-body">
-                <h3 class="dish-title">دجاج مشوي بالفرن</h3>
-                <p class="dish-desc">دجاج مشوي في الفرن بتوابل مغربية</p>
-                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20مشوي"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
-            </div>
-        </div>
-
-        <!-- 4. دجاج معمر بالمعادنوس -->
-        <div class="dish-card">
-            <div class="dish-image-gallery">
-                <img class="gallery-main-img" id="mainImg4" src="https://i.postimg.cc/3xpG4sVq/1.jpg" alt="دجاج معمر في الرياض" />
-                <span class="dish-badge">معمر</span>
-            </div>
-            <div class="gallery-thumbnails">
-                <img class="gallery-thumb active" src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" 
-                     onclick="changeImage('mainImg4', this.src, this)" alt="دجاج معمر" />
-                <div class="gallery-thumb-delivery">صورة<br>الديليفري</div>
-            </div>
-            <div class="dish-body">
-                <h3 class="dish-title">دجاج معمر بالمعادنوس</h3>
-                <p class="dish-desc">دجاج محشو بالبقدونس والثوم</p>
-                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20معمر%20بالمعادنوس"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
-            </div>
-        </div>
-
-        <!-- 5. دجاج معمر بالقشاوش -->
-        <div class="dish-card">
-            <div class="dish-image-gallery">
-                <img class="gallery-main-img" id="mainImg5" src="https://i.postimg.cc/3xpG4sVq/1.jpg" alt="دجاج معمر في الرياض" />
-                <span class="dish-badge">معمر</span>
-            </div>
-            <div class="gallery-thumbnails">
-                <img class="gallery-thumb active" src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" 
-                     onclick="changeImage('mainImg5', this.src, this)" alt="دجاج معمر" />
-                <div class="gallery-thumb-delivery">صورة<br>الديليفري</div>
-            </div>
-            <div class="dish-body">
-                <h3 class="dish-title">دجاج معمر بالقشاوش</h3>
-                <p class="dish-desc">دجاج محشو بالجبن والقشدة</p>
-                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20معمر%20بالقشاوش"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
-            </div>
-        </div>
-
-        <!-- 6. دجاج معمر بشعرية -->
-        <div class="dish-card">
-            <div class="dish-image-gallery">
-                <img class="gallery-main-img" id="mainImg6" src="https://i.postimg.cc/3xpG4sVq/1.jpg" alt="دجاج معمر في الرياض" />
-                <span class="dish-badge">معمر</span>
-            </div>
-            <div class="gallery-thumbnails">
-                <img class="gallery-thumb active" src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" 
-                     onclick="changeImage('mainImg6', this.src, this)" alt="دجاج معمر" />
-                <div class="gallery-thumb-delivery">صورة<br>الديليفري</div>
-            </div>
-            <div class="dish-body">
-                <h3 class="dish-title">دجاج معمر بشعرية</h3>
-                <p class="dish-desc">دجاج محشو بالشعرية الصينية</p>
-                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20معمر%20بشعرية"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
-            </div>
-        </div>
-
-        <!-- 7. دجاج معمر بالروز -->
-        <div class="dish-card">
-            <div class="dish-image-gallery">
-                <img class="gallery-main-img" id="mainImg7" src="https://i.postimg.cc/3xpG4sVq/1.jpg" alt="دجاج معمر في الرياض" />
-                <span class="dish-badge">معمر</span>
-            </div>
-            <div class="gallery-thumbnails">
-                <img class="gallery-thumb active" src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" 
-                     onclick="changeImage('mainImg7', this.src, this)" alt="دجاج معمر" />
-                <div class="gallery-thumb-delivery">صورة<br>الديليفري</div>
-            </div>
-            <div class="dish-body">
-                <h3 class="dish-title">دجاج معمر بالروز</h3>
-                <p class="dish-desc">دجاج محشو بالأرز والتوابل</p>
-                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20معمر%20بالروز"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
-            </div>
-        </div>
-
-        <!-- 8. دجاج معمر بالقمرون -->
-        <div class="dish-card">
-            <div class="dish-image-gallery">
-                <img class="gallery-main-img" id="mainImg8" src="https://i.postimg.cc/3xpG4sVq/1.jpg" alt="دجاج معمر في الرياض" />
-                <span class="dish-badge">معمر</span>
-            </div>
-            <div class="gallery-thumbnails">
-                <img class="gallery-thumb active" src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" 
-                     onclick="changeImage('mainImg8', this.src, this)" alt="دجاج معمر" />
-                <div class="gallery-thumb-delivery">صورة<br>الديليفري</div>
-            </div>
-            <div class="dish-body">
-                <h3 class="dish-title">دجاج معمر بالقمرون</h3>
-                <p class="dish-desc">دجاج محشو بالقمرون (الجمبري)</p>
-                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20معمر%20بالقمرون"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
-            </div>
-        </div>
-
-        <!-- 9. دجاج معمر بالكفتة -->
-        <div class="dish-card">
-            <div class="dish-image-gallery">
-                <img class="gallery-main-img" id="mainImg9" src="https://i.postimg.cc/3xpG4sVq/1.jpg" alt="دجاج معمر في الرياض" />
-                <span class="dish-badge">معمر</span>
-            </div>
-            <div class="gallery-thumbnails">
-                <img class="gallery-thumb active" src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" 
-                     onclick="changeImage('mainImg9', this.src, this)" alt="دجاج معمر" />
-                <div class="gallery-thumb-delivery">صورة<br>الديليفري</div>
-            </div>
-            <div class="dish-body">
-                <h3 class="dish-title">دجاج معمر بالكفتة</h3>
-                <p class="dish-desc">دجاج محشو بالكفتة المفرومة</p>
-                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20معمر%20بالكفتة"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
-            </div>
-        </div>
-
-        <!-- 10. دجاج مفور بالخضرة صوطي -->
-        <div class="dish-card">
-            <div class="dish-image-gallery">
-                <img class="gallery-main-img" id="mainImg10" src="https://i.postimg.cc/3xpG4sVq/1.jpg" alt="دجاج مفور في الرياض" />
-                <span class="dish-badge">مفور</span>
-            </div>
-            <div class="gallery-thumbnails">
-                <img class="gallery-thumb active" src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/pVisnDBvzubNRLfq.jpg" 
-                     onclick="changeImage('mainImg10', this.src, this)" alt="دجاج مفور" />
-                <div class="gallery-thumb-delivery">صورة<br>الديليفري</div>
-            </div>
-            <div class="dish-body">
-                <h3 class="dish-title">دجاج مفور بالخضرة صوطي</h3>
-                <p class="dish-desc">دجاج مفور مع الخضار في صلصة الصوطي</p>
-                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20مفور%20بالخضرة"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
-            </div>
-        </div>
-
+        <!-- يمكنك نسخ هذه البطاقة لباقي الأطباق، وتغيير الروابط في id والصور -->
+        
     </div>
 </div>
 
@@ -332,19 +183,35 @@
 <footer class="site-footer"><div class="footer-bottom">© 2025 دار الإدريسي - بنة زمان — جميع الحقوق محفوظة</div></footer>
 
 <script>
-    // دالة تبديل الصورة الرئيسية عند الضغط على الصورة المصغرة
-    function changeImage(mainImgId, newSrc, clickedThumb) {
-        // تغيير الصورة الكبيرة
-        document.getElementById(mainImgId).src = newSrc;
-        
-        // إزالة التحديد النشط من جميع الصور المصغرة في نفس البطاقة
-        var parent = clickedThumb.parentElement;
-        var thumbs = parent.getElementsByClassName('gallery-thumb');
-        for (var i = 0; i < thumbs.length; i++) {
-            thumbs[i].classList.remove('active');
+    // دالة التبديل: تضع الصورة المختارة في المكان الكبير، وتضع الصورة القديمة في مكان الصورة المصغرة
+    function swapImage(mainImageId, newImageSrc, clickedThumbnail) {
+        var mainImg = document.getElementById(mainImageId);
+        var oldMainSrc = mainImg.src; // حفظ رابط الصورة القديمة
+
+        // 1. تغيير الصورة الكبيرة
+        mainImg.src = newImageSrc;
+
+        // 2. البحث عن الصورة المصغرة التي كانت تمثل الصورة الكبيرة سابقاً
+        // (لأننا نريد أن تأخذ مكان الصورة التي ضغطنا عليها)
+        var thumbnailsRow = clickedThumbnail.parentElement;
+        var allThumbs = thumbnailsRow.getElementsByClassName('thumbnail-wrapper');
+
+        // البحث عن الصورة القديمة في الصور المصغرة واستبدالها بالصورة الجديدة
+        for (var i = 0; i < allThumbs.length; i++) {
+            var imgInside = allThumbs[i].querySelector('img');
+            if (imgInside.src === oldMainSrc) {
+                // وجدنا المكان الذي كان يحتوي على الصورة الكبيرة سابقاً
+                imgInside.src = newImageSrc;
+                // إذا أردت عكس العملية تماماً، يمكنك ترك هذا السطر. 
+                // هذا يضمن أن الصورة القديمة تنزل إلى مكان الصورة المصغرة.
+            }
         }
-        // إضافة التحديد النشط للصورة التي تم الضغط عليها
-        clickedThumb.classList.add('active');
+
+        // 3. تحديث حالة التفعيل (الحدود الذهبية)
+        for (var i = 0; i < allThumbs.length; i++) {
+            allThumbs[i].classList.remove('active');
+        }
+        clickedThumbnail.classList.add('active');
     }
 
     // سكريبت الموسيقى
