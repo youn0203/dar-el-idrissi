@@ -59,62 +59,43 @@
         .back-to-top:hover { background: var(--fes-blue); color: var(--gold); transform: translateY(-3px); }
         .site-footer { background: linear-gradient(135deg, var(--fes-blue-dark) 0%, #0a1828 100%); color: #fff; padding: 30px 20px; text-align: center; margin-top: 40px; }
         .footer-bottom { font-size: 13px; color: rgba(255,255,255,0.6); }
-        @media (max-width: 768px) { .site-logo { font-size: 28px; } .section-title { font-size: 24px; } .dishes-grid { grid-template-columns: 1fr; } .container { padding: 15px 10px; } .whatsapp-float { width: 55px; height: 55px; font-size: 26px; bottom: 18px; left: 18px; } .music-btn { width: 45px; height: 45px; font-size: 18px; bottom: 18px; right: 18px; } .back-to-top { width: 45px; height: 45px; font-size: 18px; bottom: 75px; right: 18px; } }
-           /* --- تقنية تكبير الصور الاحترافية (Lightbox Gallery) --- */
+        
+        /* --- تقنية تكبير الصور الاحترافية (Lightbox Gallery) --- */
         .lightbox-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(15, 36, 56, 0.95); /* لون أزرق داكن شفاف */
-            z-index: 10000;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 36, 56, 0.95); z-index: 10000;
             display: flex; align-items: center; justify-content: center;
             opacity: 0; visibility: hidden; transition: all 0.3s ease;
         }
         .lightbox-overlay.show { opacity: 1; visibility: visible; }
-        
-        .lightbox-content {
-            position: relative;
-            max-width: 90%; max-height: 85vh;
-            display: flex; align-items: center; justify-content: center;
-        }
-        
+        .lightbox-content { position: relative; max-width: 90%; max-height: 85vh; display: flex; align-items: center; justify-content: center; }
         .lightbox-image {
-            max-width: 100%; max-height: 85vh;
-            border-radius: 12px; border: 3px solid var(--gold);
-            box-shadow: 0 0 40px rgba(0,0,0,0.6);
-            transform: scale(0.9); transition: transform 0.3s ease;
-            object-fit: contain;
+            max-width: 100%; max-height: 85vh; border-radius: 12px;
+            border: 3px solid var(--gold); box-shadow: 0 0 40px rgba(0,0,0,0.6);
+            transform: scale(0.9); transition: transform 0.3s ease; object-fit: contain;
         }
         .lightbox-overlay.show .lightbox-image { transform: scale(1); }
-
-        /* أزرار التنقل (السابق والتالي) */
         .lightbox-prev, .lightbox-next {
             position: absolute; top: 50%; transform: translateY(-50%);
             background: rgba(201, 162, 39, 0.8); color: #fff;
             border: none; width: 45px; height: 45px; border-radius: 50%;
             font-size: 20px; cursor: pointer; transition: 0.3s;
-            display: flex; align-items: center; justify-content: center;
-            z-index: 10001;
+            display: flex; align-items: center; justify-content: center; z-index: 10001;
         }
         .lightbox-prev { right: -60px; }
         .lightbox-next { left: -60px; }
         .lightbox-prev:hover, .lightbox-next:hover { background: var(--gold); transform: translateY(-50%) scale(1.1); }
-
-        /* زر الإغلاق */
         .lightbox-close {
             position: absolute; top: -50px; right: 0;
             color: #fff; font-size: 35px; cursor: pointer; transition: 0.3s;
         }
         .lightbox-close:hover { color: var(--gold); transform: scale(1.2); }
-
-        /* شكل الماوس على الصورة الرئيسية */
         .main-display-image { cursor: zoom-in; transition: opacity 0.3s ease, transform 0.3s ease; }
         .main-display-image:hover { opacity: 0.9; }
 
-        /* تحسين الأزرار للهواتف */
-        @media (max-width: 768px) {
-            .lightbox-prev { right: 10px; }
-            .lightbox-next { left: 10px; }
-            .lightbox-close { top: -40px; right: 10px; }
+        @media (max-width: 768px) { 
+            .site-logo { font-size: 28px; } .section-title { font-size: 24px; } .dishes-grid { grid-template-columns: 1fr; } .container { padding: 15px 10px; } .whatsapp-float { width: 55px; height: 55px; font-size: 26px; bottom: 18px; left: 18px; } .music-btn { width: 45px; height: 45px; font-size: 18px; bottom: 18px; right: 18px; } .back-to-top { width: 45px; height: 45px; font-size: 18px; bottom: 75px; right: 18px; }
+            .lightbox-prev { right: 10px; } .lightbox-next { left: 10px; } .lightbox-close { top: -40px; right: 10px; }
         }
     </style>
 </head>
@@ -142,7 +123,7 @@
     <p class="section-subtitle">تشكيلة واسعة من أطباق الدجاج الفاسي</p>
 
     <div class="dishes-grid">
-
+        <!-- الأطباق العشرة هنا (نفس الكود الخاص بك) -->
         <!-- الطبق 1: دجاج محمر بالزيتون والليمون مصير -->
         <div class="dish-card">
             <div class="dish-gallery-container">
@@ -321,231 +302,4 @@
             <div class="dish-body">
                 <h3 class="dish-title">دجاج معمر بالقمرون</h3>
                 <p class="dish-desc">دجاج محشو بالقمرون (الجمبري)</p>
-                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20معمر%20بالقمرون"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
-            </div>
-        </div>
-
-        <!-- الطبق 8: دجاج معمر بالشعرية -->
-        <div class="dish-card">
-            <div class="dish-gallery-container">
-                <div class="main-image-container">
-                    <img class="main-display-image" id="mainImage_8" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794061842/dajaj-m3amar-bcha3riya-riad.jpg" alt="دجاج معمر بالشعرية" />
-                    <span class="dish-badge">معمر</span>
-                </div>
-                <div class="thumbnails-row">
-                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_8', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794061842/dajaj-m3amar-bcha3riya-riad.jpg', this)">
-                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794061842/dajaj-m3amar-bcha3riya-riad.jpg" alt="riad" />
-                    </div>
-                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_8', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794061837/dajaj-m3amar-bcha3riya.png', this)">
-                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794061837/dajaj-m3amar-bcha3riya.png" alt="normal" />
-                    </div>
-                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_8', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794061838/dajaj-m3amar-bcha3riya-delivri.jpg', this)">
-                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794061838/dajaj-m3amar-bcha3riya-delivri.jpg" alt="delivri" />
-                    </div>
-                </div>
-            </div>
-            <div class="dish-body">
-                <h3 class="dish-title">دجاج معمر بالشعرية</h3>
-                <p class="dish-desc">دجاج محشو بالشعرية الصينية</p>
-                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20معمر%20بشعرية"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
-            </div>
-        </div>
-
-        <!-- الطبق 9: دجاج معمر بالمعادنوس -->
-        <div class="dish-card">
-            <div class="dish-gallery-container">
-                <div class="main-image-container">
-                    <img class="main-display-image" id="mainImage_9" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794061835/dajaj-m3amar-balma3adnouss-riad.jpg" alt="دجاج معمر بالمعادنوس" />
-                    <span class="dish-badge">معمر</span>
-                </div>
-                <div class="thumbnails-row">
-                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_9', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794061835/dajaj-m3amar-balma3adnouss-riad.jpg', this)">
-                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794061835/dajaj-m3amar-balma3adnouss-riad.jpg" alt="riad" />
-                    </div>
-                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_9', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794061835/dajaj-m3amar-balma3adnouss.png', this)">
-                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794061835/dajaj-m3amar-balma3adnouss.png" alt="normal" />
-                    </div>
-                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_9', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794061833/dajaj-m3amar-balma3adnouss-delivri.jpg', this)">
-                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794061833/dajaj-m3amar-balma3adnouss-delivri.jpg" alt="delivri" />
-                    </div>
-                </div>
-            </div>
-            <div class="dish-body">
-                <h3 class="dish-title">دجاج معمر بالمعادنوس</h3>
-                <p class="dish-desc">دجاج محشو بالبقدونس والثوم</p>
-                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20معمر%20بالمعادنوس"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
-            </div>
-        </div>
-
-        <!-- الطبق 10: دجاج معمر بالكفتة -->
-        <div class="dish-card">
-            <div class="dish-gallery-container">
-                <div class="main-image-container">
-                    <img class="main-display-image" id="mainImage_10" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794061834/dajaj-m3amar-balkafta-riad.jpg" alt="دجاج معمر بالكفتة" />
-                    <span class="dish-badge">معمر</span>
-                </div>
-                <div class="thumbnails-row">
-                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_10', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794061834/dajaj-m3amar-balkafta-riad.jpg', this)">
-                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794061834/dajaj-m3amar-balkafta-riad.jpg" alt="riad" />
-                    </div>
-                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_10', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794061831/dajaj-m3amar-balkafta.png', this)">
-                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794061831/dajaj-m3amar-balkafta.png" alt="normal" />
-                    </div>
-                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_10', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794061830/dajaj-m3amar-balkafta-delivri.jpg', this)">
-                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794061830/dajaj-m3amar-balkafta-delivri.jpg" alt="delivri" />
-                    </div>
-                </div>
-            </div>
-            <div class="dish-body">
-                <h3 class="dish-title">دجاج معمر بالكفتة</h3>
-                <p class="dish-desc">دجاج محشو بالكفتة المفرومة</p>
-                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20معمر%20بالكفتة"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<a href="#" class="back-to-top" id="backToTop" title="العودة إلى الأعلى"><i class="fas fa-arrow-up"></i></a>
-<a href="https://wa.me/212699312690" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-<footer class="site-footer"><div class="footer-bottom">© 2025 دار الإدريسي - بنة زمان — جميع الحقوق محفوظة</div></footer>
-
-<script>
-    function changeMainImage(mainImageId, newImageSrc, clickedThumbnail) {
-        var mainImg = document.getElementById(mainImageId);
-        if (mainImg) { mainImg.src = newImageSrc; }
-        var parent = clickedThumbnail.parentElement;
-        var thumbs = parent.getElementsByClassName('thumbnail-wrapper');
-        for (var i = 0; i < thumbs.length; i++) { thumbs[i].classList.remove('active'); }
-        clickedThumbnail.classList.add('active');
-    }
-
-    (function() {
-        var music = document.getElementById('bgMusic');
-        var toggleBtn = document.getElementById('musicToggle');
-        var icon = document.getElementById('musicIcon');
-        var isPlaying = false;
-
-        function playMusic() {
-            if (!music) return;
-            music.volume = 0.3;
-            var p = music.play();
-            if (p && p.then) {
-                p.then(function() { isPlaying = true; icon.className = 'fas fa-volume-up'; })
-                 .catch(function() { isPlaying = false; icon.className = 'fas fa-volume-mute'; });
-            }
-        }
-
-        document.addEventListener('click', function firstClick() {
-            if (!isPlaying) playMusic();
-            document.removeEventListener('click', firstClick);
-        });
-
-        if (toggleBtn) {
-            toggleBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                if (!music) return;
-                if (music.paused) { playMusic(); }
-                else { music.pause(); isPlaying = false; icon.className = 'fas fa-volume-mute'; }
-            });
-        }
-    })();
-
-    (function() {
-        var backToTopBtn = document.getElementById('backToTop');
-        if (!backToTopBtn) return;
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) { backToTopBtn.classList.add('show'); }
-            else { backToTopBtn.classList.remove('show'); }
-        });
-        backToTopBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    })();
-        // --- سكريبت معرض التكبير الاحترافي (Lightbox Gallery) ---
-    (function() {
-        var lightbox = document.getElementById('lightbox');
-        var lightboxImg = document.getElementById('lightboxImg');
-        var lightboxClose = document.getElementById('lightboxClose');
-        var btnPrev = document.getElementById('lightboxPrev');
-        var btnNext = document.getElementById('lightboxNext');
-        
-        var currentGallery = []; // مصفوفة لحفظ روابط صور الطبق الحالي
-        var currentIndex = 0;    // مؤشر الصورة الحالية
-
-        // عند النقر على الصورة الرئيسية لأي طبق
-        document.querySelectorAll('.main-display-image').forEach(function(mainImg) {
-            mainImg.addEventListener('click', function() {
-                // البحث عن جميع الصور المصغرة داخل نفس البطاقة
-                var card = this.closest('.dish-card');
-                var thumbs = card.querySelectorAll('.thumbnail-wrapper img');
-                
-                currentGallery = [];
-                thumbs.forEach(function(thumb) {
-                    currentGallery.push(thumb.src); // جمع روابط الصور الثلاث
-                });
-
-                // إيجاد ترتيب الصورة التي تم النقر عليها
-                currentIndex = currentGallery.indexOf(this.src);
-                if (currentIndex === -1) currentIndex = 0;
-
-                showImage(currentIndex);
-                lightbox.classList.add('show');
-            });
-        });
-
-        function showImage(index) {
-            if (currentGallery.length === 0) return;
-            // التعامل مع الحواف (إذا وصلنا لآخر صورة نعود للأولى)
-            if (index >= currentGallery.length) index = 0;
-            if (index < 0) index = currentGallery.length - 1;
-            
-            currentIndex = index;
-            lightboxImg.src = currentGallery[currentIndex];
-        }
-
-        // أزرار التنقل
-        btnNext.addEventListener('click', function(e) {
-            e.stopPropagation();
-            showImage(currentIndex + 1);
-        });
-        
-        btnPrev.addEventListener('click', function(e) {
-            e.stopPropagation();
-            showImage(currentIndex - 1);
-        });
-
-        // الإغلاق
-        lightboxClose.addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', function(e) {
-            if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
-                closeLightbox();
-            }
-        });
-
-        function closeLightbox() {
-            lightbox.classList.remove('show');
-            lightboxImg.src = "";
-        }
-
-        // التحكم بلوحة المفاتيح (للكمبيوتر)
-        document.addEventListener('keydown', function(e) {
-            if (!lightbox.classList.contains('show')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') showImage(currentIndex + 1); // في العربي السهم الأيسر يعني التالي
-            if (e.key === 'ArrowRight') showImage(currentIndex - 1);
-        });
-    })();
-</script>
-<!-- نافذة تكبير الصور -->
-<div class="lightbox-overlay" id="lightbox">
-    <div class="lightbox-content">
-        <span class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></span>
-        <button class="lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-right"></i></button>
-        <img src="" alt="تكبير الصورة" class="lightbox-image" id="lightboxImg" />
-        <button class="lightbox-next" id="lightboxNext"><i class="fas fa-chevron-left"></i></button>
-    </div>
-</div>
-</body>
-</html>
+                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب
