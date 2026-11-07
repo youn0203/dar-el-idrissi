@@ -50,7 +50,7 @@
         .btn-order { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--whatsapp); color: #fff; padding: 12px; border-radius: 12px; font-size: 15px; font-weight: 700; transition: all 0.3s; border: none; cursor: pointer; width: 100%; }
         .btn-order:hover { background: #1ebe5a; transform: scale(1.02); }
 
-        /* الأزرار العائمة */
+        /* --- أزرار العائمة --- */
         .whatsapp-float { position: fixed; bottom: 25px; left: 25px; width: 60px; height: 60px; background: var(--whatsapp); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 6px 20px rgba(37,211,102,0.5); z-index: 9999; transition: all 0.3s; animation: pulse 2s infinite; }
         .whatsapp-float:hover { transform: scale(1.1); background: #1ebe5a; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); } 70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
@@ -75,13 +75,24 @@
         .lightbox-close { position: absolute; top: -50px; right: 0; color: #fff; font-size: 35px; cursor: pointer; transition: 0.3s; }
         .lightbox-close:hover { color: var(--gold); transform: scale(1.2); }
 
-        /* شاشات الهواتف */
+        /* ========================================= */
+        /* إعدادات الهواتف (يجب أن تكون في النهاية دائماً) */
+        /* ========================================= */
         @media (max-width: 768px) { 
-            .site-logo { font-size: 28px; } .section-title { font-size: 24px; } .dishes-grid { grid-template-columns: 1fr; } .container { padding: 15px 10px; } 
+            .site-logo { font-size: 28px; } 
+            .section-title { font-size: 24px; } 
+            .dishes-grid { grid-template-columns: 1fr; } 
+            .container { padding: 15px 10px; } 
+            
             .whatsapp-float { width: 55px; height: 55px; font-size: 26px; bottom: 18px; left: 18px; } 
             .music-btn { width: 45px; height: 45px; font-size: 18px; bottom: 18px; right: 18px; } 
             .back-to-top { width: 45px; height: 45px; font-size: 18px; bottom: 75px; right: 18px; }
-            .lightbox-prev { right: 10px; } .lightbox-next { left: 10px; } .lightbox-close { top: -40px; right: 10px; }
+            
+            /* تصغير حجم صندوق التكبير ليتناسب مع شاشة الهاتف */
+            .lightbox-content { max-width: 95%; } 
+            .lightbox-prev { right: -15px; width: 35px; height: 35px; font-size: 16px; } 
+            .lightbox-next { left: -15px; width: 35px; height: 35px; font-size: 16px; } 
+            .lightbox-close { top: -45px; right: 5px; font-size: 30px; }
         }
     </style>
 </head>
@@ -377,7 +388,7 @@
 <a href="https://wa.me/212699312690" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <footer class="site-footer"><div class="footer-bottom">© 2025 دار الإدريسي - بنة زمان — جميع الحقوق محفوظة</div></footer>
 
-<!-- نافذة تكبير الصور (تم وضعها قبل السكريبت لتعمل بشكل صحيح) -->
+<!-- نافذة تكبير الصور -->
 <div class="lightbox-overlay" id="lightbox">
     <div class="lightbox-content">
         <span class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></span>
@@ -388,7 +399,7 @@
 </div>
 
 <script>
-    // 1. دالة تبديل الصور المصغرة
+    // 1. تبديل الصور
     function changeMainImage(mainImageId, newImageSrc, clickedThumbnail) {
         var mainImg = document.getElementById(mainImageId);
         if (mainImg) { mainImg.src = newImageSrc; }
@@ -398,7 +409,7 @@
         clickedThumbnail.classList.add('active');
     }
 
-    // 2. سكريبت الموسيقى
+    // 2. الموسيقى
     (function() {
         var music = document.getElementById('bgMusic');
         var toggleBtn = document.getElementById('musicToggle');
@@ -430,7 +441,7 @@
         }
     })();
 
-    // 3. زر العودة إلى الأعلى
+    // 3. زر العودة للأعلى
     (function() {
         var backToTopBtn = document.getElementById('backToTop');
         if (!backToTopBtn) return;
@@ -444,7 +455,7 @@
         });
     })();
 
-    // 4. معرض التكبير الاحترافي (Lightbox Gallery)
+    // 4. معرض التكبير (Lightbox)
     (function() {
         var lightbox = document.getElementById('lightbox');
         var lightboxImg = document.getElementById('lightboxImg');
