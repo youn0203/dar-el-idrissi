@@ -13,82 +13,83 @@
         body { background: var(--ivory); color: var(--text-dark); font-family: 'Cairo', sans-serif; line-height: 1.7; direction: rtl; }
         a { text-decoration: none; color: inherit; }
         img { max-width: 100%; height: auto; display: block; }
-        .site-header { background: linear-gradient(135deg, var(--fes-blue) 0%, var(--fes-blue-dark) 100%); color: #fff; position: relative; overflow: hidden; text-align: center; padding: 30px 20px 20px; border-bottom: 4px solid var(--gold); }
+
+        .site-header { background: linear-gradient(135deg, var(--fes-blue) 0%, var(--fes-blue-dark) 100%); color: #fff; text-align: center; padding: 30px 20px 20px; border-bottom: 4px solid var(--gold); }
         .site-logo { font-family: 'Aref Ruqaa', 'Amiri', serif; font-size: 36px; font-weight: 700; color: var(--gold-light); margin-bottom: 5px; }
         .site-tagline { font-family: 'Amiri', serif; font-size: 20px; font-weight: 700; color: #fff; }
+
         .main-nav { background: var(--fes-blue-dark); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
         .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 10px; display: flex; justify-content: center; flex-wrap: wrap; }
         .nav-inner a { color: #fff; padding: 15px 18px; font-size: 15px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; transition: 0.3s; }
-        .nav-inner a:hover, .nav-inner a.active { color: var(--gold-light); background: rgba(201,162,39,0.1); }
+        .nav-inner a:hover { color: var(--gold-light); background: rgba(201,162,39,0.1); }
+
         .container { max-width: 1200px; margin: 0 auto; padding: 25px 15px; }
         .section-title { font-family: 'Amiri', serif; font-size: 32px; color: var(--fes-blue); text-align: center; margin-bottom: 8px; font-weight: 700; }
         .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--gold); margin: 12px auto 0; border-radius: 3px; }
         .section-subtitle { text-align: center; color: var(--text-muted); font-size: 15px; margin-bottom: 30px; margin-top: 8px; }
         .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--gold); font-weight: 700; margin-bottom: 20px; font-size: 16px; }
         .back-link:hover { color: var(--terracotta); }
-        .dishes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px; }
+
+        .dishes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-bottom: 40px; }
         .dish-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all 0.35s ease; border: 1px solid rgba(201,162,39,0.15); display: flex; flex-direction: column; }
         .dish-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--gold); }
-        .dish-image { position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--ivory-dark); }
-        .dish-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .dish-card:hover .dish-image img { transform: scale(1.08); }
-        .dish-badge { position: absolute; top: 12px; right: 12px; background: var(--gold); color: var(--fes-blue-dark); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; z-index: 2; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+
+        .dish-gallery-container { position: relative; width: 100%; background: var(--ivory-dark); }
+        .main-image-container { width: 100%; aspect-ratio: 4/3; overflow: hidden; position: relative; }
+        .main-display-image { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease; cursor: zoom-in; }
+        .main-display-image:hover { opacity: 0.9; }
+        .thumbnails-row { display: flex; gap: 10px; padding: 10px; background: #fff; border-top: 1px solid rgba(201,162,39,0.15); justify-content: center; }
+        .thumbnail-wrapper { width: 65px; height: 65px; border-radius: 8px; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease; opacity: 0.7; }
+        .thumbnail-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+        .thumbnail-wrapper:hover, .thumbnail-wrapper.active { border-color: var(--gold); opacity: 1; transform: scale(1.05); }
+        .dish-badge { position: absolute; top: 12px; right: 12px; background: var(--gold); color: var(--fes-blue-dark); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; z-index: 5; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+
         .dish-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
         .dish-title { font-family: 'Amiri', serif; font-size: 21px; font-weight: 700; color: var(--fes-blue); margin-bottom: 6px; }
         .dish-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 15px; flex: 1; }
         .btn-order { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--whatsapp); color: #fff; padding: 12px; border-radius: 12px; font-size: 15px; font-weight: 700; transition: all 0.3s; border: none; cursor: pointer; width: 100%; }
         .btn-order:hover { background: #1ebe5a; transform: scale(1.02); }
+
         .whatsapp-float { position: fixed; bottom: 25px; left: 25px; width: 60px; height: 60px; background: var(--whatsapp); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 6px 20px rgba(37,211,102,0.5); z-index: 9999; transition: all 0.3s; animation: pulse 2s infinite; }
         .whatsapp-float:hover { transform: scale(1.1); background: #1ebe5a; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); } 70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
         .music-btn { position: fixed; bottom: 25px; right: 25px; width: 50px; height: 50px; background: var(--fes-blue); color: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer; z-index: 9999; border: 2px solid var(--gold); transition: 0.3s; }
         .music-btn:hover { background: var(--gold); color: var(--fes-blue-dark); transform: scale(1.1); }
+        .back-to-top { position: fixed; bottom: 90px; right: 25px; width: 50px; height: 50px; background: var(--gold); color: var(--fes-blue-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9998; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: var(--fes-blue); color: var(--gold); transform: translateY(-3px); }
         .site-footer { background: linear-gradient(135deg, var(--fes-blue-dark) 0%, #0a1828 100%); color: #fff; padding: 30px 20px; text-align: center; margin-top: 40px; }
         .footer-bottom { font-size: 13px; color: rgba(255,255,255,0.6); }
-        @media (max-width: 768px) { .site-logo { font-size: 28px; } .section-title { font-size: 24px; } .dishes-grid { grid-template-columns: 1fr; } .container { padding: 15px 10px; } .whatsapp-float { width: 55px; height: 55px; font-size: 26px; bottom: 18px; left: 18px; } .music-btn { width: 45px; height: 45px; font-size: 18px; bottom: 18px; right: 18px; } }
-   /* زر العودة إلى الأعلى */
-.back-to-top {
-    position: fixed;
-    bottom: 90px; /* فوق زر الموسيقى */
-    right: 25px;
-    width: 50px;
-    height: 50px;
-    background: var(--gold);
-    color: var(--fes-blue-dark);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    z-index: 9998;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-.back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-}
-.back-to-top:hover {
-    background: var(--fes-blue);
-    color: var(--gold);
-    transform: translateY(-3px);
-}
-@media (max-width: 768px) {
-    .back-to-top {
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
-        bottom: 75px; /* فوق زر الموسيقى في الجوال */
-        right: 18px;
-    }
-}
+
+        .lightbox-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 36, 56, 0.95); z-index: 10000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+        .lightbox-overlay.show { opacity: 1; visibility: visible; }
+        .lightbox-content { position: relative; max-width: 90%; max-height: 85vh; display: flex; align-items: center; justify-content: center; }
+        .lightbox-image { max-width: 100%; max-height: 85vh; border-radius: 12px; border: 3px solid var(--gold); box-shadow: 0 0 40px rgba(0,0,0,0.6); transform: scale(0.9); transition: transform 0.3s ease; object-fit: contain; }
+        .lightbox-overlay.show .lightbox-image { transform: scale(1); }
+        .lightbox-prev, .lightbox-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(201, 162, 39, 0.8); color: #fff; border: none; width: 45px; height: 45px; border-radius: 50%; font-size: 20px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; z-index: 10001; }
+        .lightbox-prev { right: -60px; }
+        .lightbox-next { left: -60px; }
+        .lightbox-prev:hover, .lightbox-next:hover { background: var(--gold); transform: translateY(-50%) scale(1.1); }
+        .lightbox-close { position: absolute; top: -50px; right: 0; color: #fff; font-size: 35px; cursor: pointer; transition: 0.3s; }
+        .lightbox-close:hover { color: var(--gold); transform: scale(1.2); }
+
+        @media (max-width: 768px) { 
+            .site-logo { font-size: 28px; } 
+            .section-title { font-size: 24px; } 
+            .dishes-grid { grid-template-columns: 1fr; } 
+            .container { padding: 15px 10px; } 
+            .whatsapp-float { width: 55px; height: 55px; font-size: 26px; bottom: 18px; left: 18px; } 
+            .music-btn { width: 45px; height: 45px; font-size: 18px; bottom: 18px; right: 18px; } 
+            .back-to-top { width: 45px; height: 45px; font-size: 18px; bottom: 75px; right: 18px; }
+            .lightbox-content { max-width: 95%; } 
+            .lightbox-prev { right: -15px; width: 35px; height: 35px; font-size: 16px; } 
+            .lightbox-next { left: -15px; width: 35px; height: 35px; font-size: 16px; } 
+            .lightbox-close { top: -45px; right: 5px; font-size: 30px; }
+        }
     </style>
 </head>
 <body>
-<audio id="bgMusic" loop><source src="https://ia600505.us.archive.org/4/items/cut-627sec/%D9%82%D8%B5%D9%8A%D8%AF%D8%A9%20%D8%A7%D9%84%D8%B2%D8%B1%D8%AF%D8%A9%20%D9%84%D9%84%D9%81%D9%86%D8%A7%D9%86%20%D9%85%D8%AD%D9%85%D8%AF%20%D8%A8%D8%B1%D9%83%D8%A7%D9%85%20%D8%B1%D8%AD%D9%85%D9%87%20%D8%A7%D9%84%D9%84%D9%91%D9%87_%5Bcut_627sec%5D.mp3" type="audio/mpeg"></audio>
+<audio id="bgMusic" loop preload="auto"><source src="https://ia600505.us.archive.org/4/items/cut-627sec/%D9%82%D8%B5%D9%8A%D8%AF%D8%A9%20%D8%A7%D9%84%D8%B2%D8%B1%D8%AF%D8%A9%20%D9%84%D9%84%D9%81%D9%86%D8%A7%D9%86%20%D9%85%D8%AD%D9%85%D8%AF%20%D8%A8%D8%B1%D9%83%D8%A7%D9%85%20%D8%B1%D8%AD%D9%85%D9%87%20%D8%A7%D9%84%D9%84%D9%91%D9%87_%5Bcut_627sec%5D.mp3" type="audio/mpeg"></audio>
 <button class="music-btn" id="musicToggle" title="إيقاف/تشغيل الموسيقى"><i class="fas fa-volume-up" id="musicIcon"></i></button>
 
 <header class="site-header">
@@ -109,11 +110,31 @@
     <a href="index.html" class="back-link"><i class="fas fa-arrow-right"></i> العودة إلى قائمة الأصناف</a>
     <h2 class="section-title">أطباق اللحوم</h2>
     <p class="section-subtitle">تشكيلة من أطباق اللحوم الفاسية</p>
-    
+
     <div class="dishes-grid">
+
         <!-- 1. اللحم بالبرقوق وبيض ولوز -->
         <div class="dish-card">
-            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/ehNVUBTKriGILVWC.jpg" /><span class="dish-badge">مناسبات</span></div>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_1" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766825/lham_bel_barqoq.jpg" alt="طبق اللحم بالبرقوق وبيض ولوز" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">مناسبات</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_1', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766825/lham_bel_barqoq.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766825/lham_bel_barqoq.jpg" alt="اللحم بالبرقوق - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_1', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766835/lham_bel_barqoq-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766835/lham_bel_barqoq-riad.jpg" alt="اللحم بالبرقوق - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_1', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766828/lham_bel_barqoq-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766828/lham_bel_barqoq-carte.jpg" alt="اللحم بالبرقوق - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_1', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766831/lham_bel_barqoq-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766831/lham_bel_barqoq-delivri.jpg" alt="اللحم بالبرقوق - التوصيل" loading="lazy" />
+                    </div>
+                </div>
+            </div>
             <div class="dish-body">
                 <h3 class="dish-title">اللحم بالبرقوق وبيض ولوز</h3>
                 <p class="dish-desc">لحم طري بالبرقوق واللوز والبيض</p>
@@ -123,7 +144,26 @@
 
         <!-- 2. اللحم مدغمر بالمشماش والأناناس وبيض سمان -->
         <div class="dish-card">
-            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/ehNVUBTKriGILVWC.jpg" /><span class="dish-badge">فاخر</span></div>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_2" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766836/lham_bel_mchmach_ananas.png" alt="طبق اللحم مدغمر بالمشماش والأناناس وبيض سمان" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">فاخر</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_2', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766836/lham_bel_mchmach_ananas.png', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766836/lham_bel_mchmach_ananas.png" alt="اللحم مدغمر - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_2', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766844/lham_bel_mchmach_ananas-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766844/lham_bel_mchmach_ananas-riad.jpg" alt="اللحم مدغمر - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_2', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766839/lham_bel_mchmach_ananas-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766839/lham_bel_mchmach_ananas-carte.jpg" alt="اللحم مدغمر - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_2', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766841/lham_bel_mchmach_ananas-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766841/lham_bel_mchmach_ananas-delivri.jpg" alt="اللحم مدغمر - التوصيل" loading="lazy" />
+                    </div>
+                </div>
+            </div>
             <div class="dish-body">
                 <h3 class="dish-title">اللحم مدغمر بالمشماش والأناناس وبيض سمان</h3>
                 <p class="dish-desc">لحم مدغمر بالفواكه وبيض السمان</p>
@@ -133,7 +173,26 @@
 
         <!-- 3. اللحم مفور بالخضرة صوطي -->
         <div class="dish-card">
-            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/ehNVUBTKriGILVWC.jpg" /><span class="dish-badge">صوطي</span></div>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_3" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766876/lham_mfower_belkhodra.png" alt="طبق اللحم مفور بالخضرة صوطي" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">صوطي</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_3', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766876/lham_mfower_belkhodra.png', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766876/lham_mfower_belkhodra.png" alt="اللحم مفور - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_3', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766884/lham_mfower_belkhodra-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766884/lham_mfower_belkhodra-riad.jpg" alt="اللحم مفور - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_3', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766877/lham_mfower_belkhodra-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766877/lham_mfower_belkhodra-carte.jpg" alt="اللحم مفور - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_3', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766881/lham_mfower_belkhodra-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766881/lham_mfower_belkhodra-delivri.jpg" alt="اللحم مفور - التوصيل" loading="lazy" />
+                    </div>
+                </div>
+            </div>
             <div class="dish-body">
                 <h3 class="dish-title">اللحم مفور بالخضرة صوطي</h3>
                 <p class="dish-desc">لحم مفور مع الخضار بصلصة الصوطي</p>
@@ -143,7 +202,26 @@
 
         <!-- 4. اللحم محمر -->
         <div class="dish-card">
-            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/ehNVUBTKriGILVWC.jpg" /><span class="dish-badge">محمر</span></div>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_4" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766886/lham_mhammar.png" alt="طبق اللحم محمر" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">محمر</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_4', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766886/lham_mhammar.png', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766886/lham_mhammar.png" alt="اللحم محمر - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_4', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794767004/lham_mhammar-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767004/lham_mhammar-riad.jpg" alt="اللحم محمر - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_4', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766997/lham_mhammar-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766997/lham_mhammar-carte.jpg" alt="اللحم محمر - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_4', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794767000/lham_mhammar-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767000/lham_mhammar-delivri.jpg" alt="اللحم محمر - التوصيل" loading="lazy" />
+                    </div>
+                </div>
+            </div>
             <div class="dish-body">
                 <h3 class="dish-title">اللحم محمر</h3>
                 <p class="dish-desc">لحم محمر بالتوابل المغربية</p>
@@ -153,7 +231,26 @@
 
         <!-- 5. اللحم مقلي -->
         <div class="dish-card">
-            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/ehNVUBTKriGILVWC.jpg" /><span class="dish-badge">مقلي</span></div>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_5" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767006/lham_mqalli.png" alt="طبق اللحم مقلي" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">مقلي</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_5', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794767006/lham_mqalli.png', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767006/lham_mqalli.png" alt="اللحم مقلي - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_5', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794767039/lham_mqalli-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767039/lham_mqalli-riad.jpg" alt="اللحم مقلي - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_5', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794767032/lham_mqalli-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767032/lham_mqalli-carte.jpg" alt="اللحم مقلي - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_5', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794767035/lham_mqalli-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767035/lham_mqalli-delivri.jpg" alt="اللحم مقلي - التوصيل" loading="lazy" />
+                    </div>
+                </div>
+            </div>
             <div class="dish-body">
                 <h3 class="dish-title">اللحم مقلي</h3>
                 <p class="dish-desc">قطع لحم مقلية مقرمشة</p>
@@ -163,7 +260,26 @@
 
         <!-- 6. اللحم تفاية -->
         <div class="dish-card">
-            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/ehNVUBTKriGILVWC.jpg" /><span class="dish-badge">تفاية</span></div>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_6" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767042/lham_tfaya.png" alt="طبق اللحم تفاية" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">تفاية</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_6', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794767042/lham_tfaya.png', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767042/lham_tfaya.png" alt="اللحم تفاية - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_6', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794767048/lham_tfaya-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767048/lham_tfaya-riad.jpg" alt="اللحم تفاية - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_6', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794767043/lham_tfaya-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767043/lham_tfaya-carte.jpg" alt="اللحم تفاية - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_6', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794767046/lham_tfaya-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767046/lham_tfaya-delivri.jpg" alt="اللحم تفاية - التوصيل" loading="lazy" />
+                    </div>
+                </div>
+            </div>
             <div class="dish-body">
                 <h3 class="dish-title">اللحم تفاية</h3>
                 <p class="dish-desc">لحم تفاية بالبصل والزبيب والقرفة</p>
@@ -173,7 +289,26 @@
 
         <!-- 7. اللحم بالقييم -->
         <div class="dish-card">
-            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/ehNVUBTKriGILVWC.jpg" /><span class="dish-badge">بقييم</span></div>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_7" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766845/lham_belqiyam.jpg" alt="طبق اللحم بالقييم" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">بقييم</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_7', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766845/lham_belqiyam.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766845/lham_belqiyam.jpg" alt="اللحم بالقييم - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_7', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766854/lham_belqiyam-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766854/lham_belqiyam-riad.jpg" alt="اللحم بالقييم - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_7', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766848/lham_belqiyam-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766848/lham_belqiyam-carte.jpg" alt="اللحم بالقييم - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_7', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766851/lham_belqiyam-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766851/lham_belqiyam-delivri.jpg" alt="اللحم بالقييم - التوصيل" loading="lazy" />
+                    </div>
+                </div>
+            </div>
             <div class="dish-body">
                 <h3 class="dish-title">اللحم بالقييم</h3>
                 <p class="dish-desc">لحم بالقييم (طبق تقليدي)</p>
@@ -183,7 +318,26 @@
 
         <!-- 8. اللحم مدربل -->
         <div class="dish-card">
-            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/ehNVUBTKriGILVWC.jpg" /><span class="dish-badge">مدربل</span></div>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_8" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766866/lham_mderbel.jpg" alt="طبق اللحم مدربل" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">مدربل</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_8', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766866/lham_mderbel.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766866/lham_mderbel.jpg" alt="اللحم مدربل - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_8', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766874/lham_mderbel-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766874/lham_mderbel-riad.jpg" alt="اللحم مدربل - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_8', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766869/lham_mderbel-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766869/lham_mderbel-carte.jpg" alt="اللحم مدربل - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_8', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766871/lham_mderbel-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766871/lham_mderbel-delivri.jpg" alt="اللحم مدربل - التوصيل" loading="lazy" />
+                    </div>
+                </div>
+            </div>
             <div class="dish-body">
                 <h3 class="dish-title">اللحم مدربل</h3>
                 <p class="dish-desc">لحم مدربل (طبق تقليدي)</p>
@@ -193,7 +347,26 @@
 
         <!-- 9. المروزية -->
         <div class="dish-card">
-            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/ehNVUBTKriGILVWC.jpg" /><span class="dish-badge">مروزية</span></div>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_9" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767060/mrouzia1.jpg" alt="طبق المروزية" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">مروزية</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_9', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794767060/mrouzia1.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767060/mrouzia1.jpg" alt="المروزية - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_9', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794767066/mrouzia1-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767066/mrouzia1-riad.jpg" alt="المروزية - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_9', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794767067/mrouzia-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767067/mrouzia-carte.jpg" alt="المروزية - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_9', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794767063/mrouzia1-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767063/mrouzia1-delivri.jpg" alt="المروزية - التوصيل" loading="lazy" />
+                    </div>
+                </div>
+            </div>
             <div class="dish-body">
                 <h3 class="dish-title">المروزية</h3>
                 <p class="dish-desc">مروزية فاسية باللحم واللوز والعسل</p>
@@ -203,7 +376,26 @@
 
         <!-- 10. اللحم مشوي على الفحم -->
         <div class="dish-card">
-            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/ehNVUBTKriGILVWC.jpg" /><span class="dish-badge">مشوي</span></div>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_10" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766858/lham_mchwi_ala_fahm.png" alt="طبق اللحم مشوي على الفحم" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">مشوي</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_10', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766858/lham_mchwi_ala_fahm.png', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766858/lham_mchwi_ala_fahm.png" alt="اللحم مشوي - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_10', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766864/lham_mchwi_ala_fahm-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766864/lham_mchwi_ala_fahm-riad.jpg" alt="اللحم مشوي - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_10', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766859/lham_mchwi_ala_fahm-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766859/lham_mchwi_ala_fahm-carte.jpg" alt="اللحم مشوي - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_10', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766862/lham_mchwi_ala_fahm-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766862/lham_mchwi_ala_fahm-delivri.jpg" alt="اللحم مشوي - التوصيل" loading="lazy" />
+                    </div>
+                </div>
+            </div>
             <div class="dish-body">
                 <h3 class="dish-title">اللحم مشوي على الفحم</h3>
                 <p class="dish-desc">لحم مشوي على الفحم، طري ولذيذ</p>
@@ -213,7 +405,26 @@
 
         <!-- 11. الهرݣمة بالحمص والهربل -->
         <div class="dish-card">
-            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/ehNVUBTKriGILVWC.jpg" /><span class="dish-badge">هرݣمة</span></div>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_11" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766808/hargma-ba7amouss-wharbal.jpg" alt="طبق الهرݣمة بالحمص والهربل" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">هرݣمة</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_11', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766808/hargma-ba7amouss-wharbal.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766808/hargma-ba7amouss-wharbal.jpg" alt="الهرݣمة - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_11', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766814/hargma-ba7amouss-wharbal-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766814/hargma-ba7amouss-wharbal-riad.jpg" alt="الهرݣمة - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_11', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766809/hargma-ba7amouss-wharbal-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766809/hargma-ba7amouss-wharbal-carte.jpg" alt="الهرݣمة - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_11', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766810/hargma-ba7amouss-wharbal-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766810/hargma-ba7amouss-wharbal-delivri.jpg" alt="الهرݣمة - التوصيل" loading="lazy" />
+                    </div>
+                </div>
+            </div>
             <div class="dish-body">
                 <h3 class="dish-title">الهرݣمة بالحمص والهربل</h3>
                 <p class="dish-desc">هرݣمة تقليدية بالحمص والهربل</p>
@@ -223,7 +434,26 @@
 
         <!-- 12. اللحم القدرة بالحمص -->
         <div class="dish-card">
-            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/ehNVUBTKriGILVWC.jpg" /><span class="dish-badge">قدرة</span></div>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_12" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766815/lahm-9adra-bal7amouss.jpg" alt="طبق اللحم القدرة بالحمص" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">قدرة</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_12', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766815/lahm-9adra-bal7amouss.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766815/lahm-9adra-bal7amouss.jpg" alt="اللحم القدرة - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_12', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766824/lahm-9adra-bal7amouss-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766824/lahm-9adra-bal7amouss-riad.jpg" alt="اللحم القدرة - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_12', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766819/lahm-9adra-bal7amouss-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766819/lahm-9adra-bal7amouss-carte.jpg" alt="اللحم القدرة - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_12', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794766820/lahm-9adra-bal7amouss-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794766820/lahm-9adra-bal7amouss-delivri.jpg" alt="اللحم القدرة - التوصيل" loading="lazy" />
+                    </div>
+                </div>
+            </div>
             <div class="dish-body">
                 <h3 class="dish-title">اللحم القدرة بالحمص</h3>
                 <p class="dish-desc">لحم قدرة تقليدي بالحمص</p>
@@ -233,39 +463,169 @@
 
         <!-- 13. اللحم القدرة التويمية بالوز -->
         <div class="dish-card">
-            <div class="dish-image"><img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/ehNVUBTKriGILVWC.jpg" /><span class="dish-badge">قدرة</span></div>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_13" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767051/lham-9adra-touimiya-ballouz.jpg" alt="طبق اللحم القدرة التويمية بالوز" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">قدرة</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_13', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794767051/lham-9adra-touimiya-ballouz.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767051/lham-9adra-touimiya-ballouz.jpg" alt="اللحم القدرة التويمية - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_13', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794767058/lham-9adra-touimiya-ballouz-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767058/lham-9adra-touimiya-ballouz-riad.jpg" alt="اللحم القدرة التويمية - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_13', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794767053/lham-9adra-touimiya-ballouz-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767053/lham-9adra-touimiya-ballouz-carte.jpg" alt="اللحم القدرة التويمية - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_13', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794767056/lham-9adra-touimiya-ballouz-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794767056/lham-9adra-touimiya-ballouz-delivri.jpg" alt="اللحم القدرة التويمية - التوصيل" loading="lazy" />
+                    </div>
+                </div>
+            </div>
             <div class="dish-body">
                 <h3 class="dish-title">اللحم القدرة التويمية بالوز</h3>
                 <p class="dish-desc">لحم قدرة بالتوابل واللوز (الوز)</p>
                 <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20اللحم%20القدرة%20التويمية%20بالوز"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
             </div>
         </div>
+
     </div>
 </div>
-<!-- زر العودة إلى الأعلى -->
-<a href="#" class="back-to-top" id="backToTop" title="العودة إلى الأعلى">
-    <i class="fas fa-arrow-up"></i>
-</a>
+
+<a href="#" class="back-to-top" id="backToTop" title="العودة إلى الأعلى"><i class="fas fa-arrow-up"></i></a>
 <a href="https://wa.me/212699312690" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <footer class="site-footer"><div class="footer-bottom">© 2025 دار الإدريسي - بنة زمان — جميع الحقوق محفوظة</div></footer>
-<script>(function() { var music = document.getElementById('bgMusic'); var toggleBtn = document.getElementById('musicToggle'); var icon = document.getElementById('musicIcon'); var isPlaying = false; document.addEventListener('click', function start() { if (!isPlaying && music) { music.volume = 0.3; music.play().then(function() { isPlaying = true; icon.className = 'fas fa-volume-up'; }).catch(function() {}); } document.removeEventListener('click', start); }, { once: true }); if (toggleBtn) { toggleBtn.addEventListener('click', function(e) { e.stopPropagation(); if (music.paused) { music.play(); isPlaying = true; icon.className = 'fas fa-volume-up'; } else { music.pause(); isPlaying = false; icon.className = 'fas fa-volume-mute'; } }); } })();</script>
+
+<!-- نافذة تكبير الصور -->
+<div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-content">
+        <span class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></span>
+        <button class="lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-right"></i></button>
+        <img src="" alt="تكبير الصورة" class="lightbox-image" id="lightboxImg" />
+        <button class="lightbox-next" id="lightboxNext"><i class="fas fa-chevron-left"></i></button>
+    </div>
+</div>
+
 <script>
-    // زر العودة إلى الأعلى
+    function changeMainImage(mainImageId, newImageSrc, clickedThumbnail) {
+        var mainImg = document.getElementById(mainImageId);
+        if (mainImg) { mainImg.src = newImageSrc; }
+        var parent = clickedThumbnail.parentElement;
+        var thumbs = parent.getElementsByClassName('thumbnail-wrapper');
+        for (var i = 0; i < thumbs.length; i++) { thumbs[i].classList.remove('active'); }
+        clickedThumbnail.classList.add('active');
+    }
+
     (function() {
-        var backToTopBtn = document.getElementById('backToTop');
-        if (backToTopBtn) {
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    backToTopBtn.classList.add('show');
-                } else {
-                    backToTopBtn.classList.remove('show');
-                }
-            });
-            backToTopBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+        var music = document.getElementById('bgMusic');
+        var toggleBtn = document.getElementById('musicToggle');
+        var icon = document.getElementById('musicIcon');
+        var isPlaying = false;
+
+        function playMusic() {
+            if (!music) return;
+            music.volume = 0.3;
+            var p = music.play();
+            if (p && p.then) {
+                p.then(function() { isPlaying = true; icon.className = 'fas fa-volume-up'; })
+                 .catch(function() { isPlaying = false; icon.className = 'fas fa-volume-mute'; });
+            }
+        }
+
+        document.addEventListener('click', function firstClick() {
+            if (!isPlaying) playMusic();
+            document.removeEventListener('click', firstClick);
+        });
+
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (!music) return;
+                if (music.paused) { playMusic(); }
+                else { music.pause(); isPlaying = false; icon.className = 'fas fa-volume-mute'; }
             });
         }
+    })();
+
+    (function() {
+        var backToTopBtn = document.getElementById('backToTop');
+        if (!backToTopBtn) return;
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) { backToTopBtn.classList.add('show'); }
+            else { backToTopBtn.classList.remove('show'); }
+        });
+        backToTopBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+
+    (function() {
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightboxImg');
+        var lightboxClose = document.getElementById('lightboxClose');
+        var btnPrev = document.getElementById('lightboxPrev');
+        var btnNext = document.getElementById('lightboxNext');
+        
+        var currentGallery = []; 
+        var currentIndex = 0;    
+
+        document.querySelectorAll('.main-display-image').forEach(function(mainImg) {
+            mainImg.addEventListener('click', function() {
+                var card = this.closest('.dish-card');
+                var thumbs = card.querySelectorAll('.thumbnail-wrapper img');
+                
+                currentGallery = [];
+                thumbs.forEach(function(thumb) {
+                    currentGallery.push(thumb.src); 
+                });
+
+                currentIndex = currentGallery.indexOf(this.src);
+                if (currentIndex === -1) currentIndex = 0;
+
+                showImage(currentIndex);
+                lightbox.classList.add('show');
+            });
+        });
+
+        function showImage(index) {
+            if (currentGallery.length === 0) return;
+            if (index >= currentGallery.length) index = 0;
+            if (index < 0) index = currentGallery.length - 1;
+            
+            currentIndex = index;
+            lightboxImg.src = currentGallery[currentIndex];
+        }
+
+        btnNext.addEventListener('click', function(e) {
+            e.stopPropagation();
+            showImage(currentIndex + 1);
+        });
+        
+        btnPrev.addEventListener('click', function(e) {
+            e.stopPropagation();
+            showImage(currentIndex - 1);
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+                closeLightbox();
+            }
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('show');
+            lightboxImg.src = "";
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (!lightbox.classList.contains('show')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showImage(currentIndex + 1); 
+            if (e.key === 'ArrowRight') showImage(currentIndex - 1);
+        });
     })();
 </script>
 </body>
