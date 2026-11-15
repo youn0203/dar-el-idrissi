@@ -22,14 +22,18 @@
         .site-header { background: linear-gradient(135deg, var(--fes-blue) 0%, var(--fes-blue-dark) 100%); color: #fff; position: relative; overflow: hidden; text-align: center; padding: 30px 20px 30px; border-bottom: 4px solid var(--gold); }
         .site-header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a227' fill-opacity='0.06'%3E%3Cpath d='M30 0l7.5 7.5L30 15l-7.5-7.5L30 0zm0 45l7.5 7.5L30 60l-7.5-7.5L30 45zM0 30l7.5-7.5L15 30l-7.5 7.5L0 30zm45 0l7.5-7.5L60 30l-7.5 7.5L45 30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); opacity: 0.5; }
 
-        /* أيقونات التواصل الاجتماعي */
+        /* أيقونات التواصل الاجتماعي - بألوانها الأصلية دائماً */
         .social-header { position: relative; z-index: 3; display: flex; justify-content: center; gap: 12px; margin-bottom: 18px; flex-wrap: wrap; }
-        .social-header a { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; color: #fff; background: rgba(255,255,255,0.12); border: 1.5px solid rgba(201,162,39,0.5); transition: all 0.3s ease; backdrop-filter: blur(4px); }
-        .social-header a:hover { background: var(--gold); color: var(--fes-blue-dark); border-color: var(--gold); transform: translateY(-3px) scale(1.08); box-shadow: 0 6px 18px rgba(201,162,39,0.45); }
-        .social-header a.facebook:hover { background: #1877f2; color: #fff; border-color: #1877f2; }
-        .social-header a.instagram:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #fff; border-color: #dc2743; }
-        .social-header a.tiktok:hover { background: #000; color: #fff; border-color: #000; }
-        .social-header a.youtube:hover { background: #ff0000; color: #fff; border-color: #ff0000; }
+        .social-header a { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; color: #fff; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(0,0,0,0.25); border: 2px solid rgba(255,255,255,0.25); }
+        .social-header a.facebook { background: #1877f2; }
+        .social-header a.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .social-header a.tiktok { background: #000000; }
+        .social-header a.youtube { background: #ff0000; }
+        .social-header a:hover { transform: translateY(-4px) scale(1.12); box-shadow: 0 8px 22px rgba(0,0,0,0.4); border-color: var(--gold); }
+        .social-header a.facebook:hover { box-shadow: 0 8px 22px rgba(24,119,242,0.6); }
+        .social-header a.instagram:hover { box-shadow: 0 8px 22px rgba(220,39,67,0.6); }
+        .social-header a.tiktok:hover { box-shadow: 0 8px 22px rgba(0,0,0,0.6); }
+        .social-header a.youtube:hover { box-shadow: 0 8px 22px rgba(255,0,0,0.6); }
 
         .header-content { position: relative; z-index: 2; }
         .site-logo { font-family: 'Aref Ruqaa', 'Amiri', serif; font-size: 48px; font-weight: 700; color: var(--gold-light); margin-bottom: 5px; text-shadow: 0 4px 15px rgba(0,0,0,0.6); }
@@ -108,7 +112,7 @@
             .category-card { padding: 20px 15px; }
             .back-to-top { width: 45px; height: 45px; font-size: 18px; bottom: 75px; right: 18px; }
             .social-header { gap: 10px; margin-bottom: 14px; }
-            .social-header a { width: 34px; height: 34px; font-size: 14px; }
+            .social-header a { width: 36px; height: 36px; font-size: 16px; }
         }
     </style>
 </head>
