@@ -121,31 +121,38 @@
 
     <div class="dishes-grid">
 
-        <!-- الطبق 1 -->
-        <div class="dish-card">
-            <div class="dish-gallery-container">
-                <div class="main-image-container">
-                    <img class="main-display-image" id="mainImage_1" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794061877/dajaj-mhamar-zitoun-limoun-msyar-riad.jpg" alt="دجاج محمر" />
-                    <span class="dish-badge">تقليدي</span>
-                </div>
-                <div class="thumbnails-row">
-                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_1', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794061877/dajaj-mhamar-zitoun-limoun-msyar-riad.jpg', this)">
-                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794061877/dajaj-mhamar-zitoun-limoun-msyar-riad.jpg" alt="riad" />
-                    </div>
-                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_1', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794061873/dajaj-mhamar-zitoun-limoun-msyar.png', this)">
-                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794061873/dajaj-mhamar-zitoun-limoun-msyar.png" alt="normal" />
-                    </div>
-                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_1', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794061875/dajaj-mhamar-zitoun-limoun-msyar-delivrit.jpg', this)">
-                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794061875/dajaj-mhamar-zitoun-limoun-msyar-delivrit.jpg" alt="delivri" />
-                    </div>
-                </div>
+       <!-- الطبق 1: دجاج محمر بالزيتون والليمون مصير -->
+<div class="dish-card">
+    <div class="dish-gallery-container">
+        <div class="main-image-container">
+            <img class="main-display-image" id="mainImage_1" 
+                 src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794763321/dajaj-mhamar-zitoun-limoun-msyar.png" 
+                 alt="طبق دجاج محمر بالزيتون والليمون مصير" 
+                 loading="lazy"
+                 onerror="this.src='images/placeholder.jpg'" />
+            <span class="dish-badge">تقليدي</span>
+        </div>
+        <div class="thumbnails-row">
+            <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_1', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794763321/dajaj-mhamar-zitoun-limoun-msyar.png', this)">
+                <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794763321/dajaj-mhamar-zitoun-limoun-msyar.png" alt="دجاج محمر - الطبق" loading="lazy" />
             </div>
-            <div class="dish-body">
-                <h3 class="dish-title">دجاج محمر بالزيتون والليمون مصير</h3>
-                <p class="dish-desc">دجاج محمر بالتوابل مع الزيتون والليمون المصير</p>
-                <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20محمر%20بالزيتون"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+            <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_1', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794763327/dajaj-mhamar-zitoun-limoun-msyar-riad.jpg', this)">
+                <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794763327/dajaj-mhamar-zitoun-limoun-msyar-riad.jpg" alt="دجاج محمر - عرض الرياض" loading="lazy" />
+            </div>
+            <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_1', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794763322/dajaj-mhamar-zitoun-limoun-msyar-carte.jpg', this)">
+                <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794763322/dajaj-mhamar-zitoun-limoun-msyar-carte.jpg" alt="دجاج محمر - البطاقة" loading="lazy" />
+            </div>
+            <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_1', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794763323/dajaj-mhamar-zitoun-limoun-msyar-delivrit.jpg', this)">
+                <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794763323/dajaj-mhamar-zitoun-limoun-msyar-delivrit.jpg" alt="دجاج محمر - التوصيل" loading="lazy" />
             </div>
         </div>
+    </div>
+    <div class="dish-body">
+        <h3 class="dish-title">دجاج محمر بالزيتون والليمون مصير</h3>
+        <p class="dish-desc">دجاج محمر بالتوابل مع الزيتون والليمون المصير</p>
+        <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20دجاج%20محمر%20بالزيتون"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
+    </div>
+</div>
 
         <!-- الطبق 2 -->
         <div class="dish-card">
