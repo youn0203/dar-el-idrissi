@@ -13,82 +13,83 @@
         body { background: var(--ivory); color: var(--text-dark); font-family: 'Cairo', sans-serif; line-height: 1.7; direction: rtl; }
         a { text-decoration: none; color: inherit; }
         img { max-width: 100%; height: auto; display: block; }
-        .site-header { background: linear-gradient(135deg, var(--fes-blue) 0%, var(--fes-blue-dark) 100%); color: #fff; position: relative; overflow: hidden; text-align: center; padding: 30px 20px 20px; border-bottom: 4px solid var(--gold); }
+
+        .site-header { background: linear-gradient(135deg, var(--fes-blue) 0%, var(--fes-blue-dark) 100%); color: #fff; text-align: center; padding: 30px 20px 20px; border-bottom: 4px solid var(--gold); }
         .site-logo { font-family: 'Aref Ruqaa', 'Amiri', serif; font-size: 36px; font-weight: 700; color: var(--gold-light); margin-bottom: 5px; }
         .site-tagline { font-family: 'Amiri', serif; font-size: 20px; font-weight: 700; color: #fff; }
+
         .main-nav { background: var(--fes-blue-dark); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
         .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 10px; display: flex; justify-content: center; flex-wrap: wrap; }
         .nav-inner a { color: #fff; padding: 15px 18px; font-size: 15px; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; transition: 0.3s; }
-        .nav-inner a:hover, .nav-inner a.active { color: var(--gold-light); background: rgba(201,162,39,0.1); }
+        .nav-inner a:hover { color: var(--gold-light); background: rgba(201,162,39,0.1); }
+
         .container { max-width: 1200px; margin: 0 auto; padding: 25px 15px; }
         .section-title { font-family: 'Amiri', serif; font-size: 32px; color: var(--fes-blue); text-align: center; margin-bottom: 8px; font-weight: 700; }
         .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--gold); margin: 12px auto 0; border-radius: 3px; }
         .section-subtitle { text-align: center; color: var(--text-muted); font-size: 15px; margin-bottom: 30px; margin-top: 8px; }
         .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--gold); font-weight: 700; margin-bottom: 20px; font-size: 16px; }
         .back-link:hover { color: var(--terracotta); }
-        .dishes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px; }
+
+        .dishes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; margin-bottom: 40px; }
         .dish-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); transition: all 0.35s ease; border: 1px solid rgba(201,162,39,0.15); display: flex; flex-direction: column; }
         .dish-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--gold); }
-        .dish-image { position: relative; width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--ivory-dark); }
-        .dish-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .dish-card:hover .dish-image img { transform: scale(1.08); }
-        .dish-badge { position: absolute; top: 12px; right: 12px; background: var(--gold); color: var(--fes-blue-dark); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; z-index: 2; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+
+        .dish-gallery-container { position: relative; width: 100%; background: var(--ivory-dark); }
+        .main-image-container { width: 100%; aspect-ratio: 4/3; overflow: hidden; position: relative; }
+        .main-display-image { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease; cursor: zoom-in; }
+        .main-display-image:hover { opacity: 0.9; }
+        .thumbnails-row { display: flex; gap: 10px; padding: 10px; background: #fff; border-top: 1px solid rgba(201,162,39,0.15); justify-content: center; }
+        .thumbnail-wrapper { width: 65px; height: 65px; border-radius: 8px; overflow: hidden; cursor: pointer; border: 2px solid transparent; transition: all 0.3s ease; opacity: 0.7; }
+        .thumbnail-wrapper img { width: 100%; height: 100%; object-fit: cover; }
+        .thumbnail-wrapper:hover, .thumbnail-wrapper.active { border-color: var(--gold); opacity: 1; transform: scale(1.05); }
+        .dish-badge { position: absolute; top: 12px; right: 12px; background: var(--gold); color: var(--fes-blue-dark); padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; z-index: 5; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+
         .dish-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
         .dish-title { font-family: 'Amiri', serif; font-size: 21px; font-weight: 700; color: var(--fes-blue); margin-bottom: 6px; }
         .dish-desc { font-size: 14px; color: var(--text-muted); line-height: 1.6; margin-bottom: 15px; flex: 1; }
         .btn-order { display: flex; align-items: center; justify-content: center; gap: 8px; background: var(--whatsapp); color: #fff; padding: 12px; border-radius: 12px; font-size: 15px; font-weight: 700; transition: all 0.3s; border: none; cursor: pointer; width: 100%; }
         .btn-order:hover { background: #1ebe5a; transform: scale(1.02); }
+
         .whatsapp-float { position: fixed; bottom: 25px; left: 25px; width: 60px; height: 60px; background: var(--whatsapp); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 6px 20px rgba(37,211,102,0.5); z-index: 9999; transition: all 0.3s; animation: pulse 2s infinite; }
         .whatsapp-float:hover { transform: scale(1.1); background: #1ebe5a; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); } 70% { box-shadow: 0 0 0 15px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
         .music-btn { position: fixed; bottom: 25px; right: 25px; width: 50px; height: 50px; background: var(--fes-blue); color: var(--gold-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); cursor: pointer; z-index: 9999; border: 2px solid var(--gold); transition: 0.3s; }
         .music-btn:hover { background: var(--gold); color: var(--fes-blue-dark); transform: scale(1.1); }
+        .back-to-top { position: fixed; bottom: 90px; right: 25px; width: 50px; height: 50px; background: var(--gold); color: var(--fes-blue-dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); z-index: 9998; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+        .back-to-top.show { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: var(--fes-blue); color: var(--gold); transform: translateY(-3px); }
         .site-footer { background: linear-gradient(135deg, var(--fes-blue-dark) 0%, #0a1828 100%); color: #fff; padding: 30px 20px; text-align: center; margin-top: 40px; }
         .footer-bottom { font-size: 13px; color: rgba(255,255,255,0.6); }
-        @media (max-width: 768px) { .site-logo { font-size: 28px; } .section-title { font-size: 24px; } .dishes-grid { grid-template-columns: 1fr; } .container { padding: 15px 10px; } .whatsapp-float { width: 55px; height: 55px; font-size: 26px; bottom: 18px; left: 18px; } .music-btn { width: 45px; height: 45px; font-size: 18px; bottom: 18px; right: 18px; } }
-   /* زر العودة إلى الأعلى */
-.back-to-top {
-    position: fixed;
-    bottom: 90px; /* فوق زر الموسيقى */
-    right: 25px;
-    width: 50px;
-    height: 50px;
-    background: var(--gold);
-    color: var(--fes-blue-dark);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    z-index: 9998;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-.back-to-top.show {
-    opacity: 1;
-    visibility: visible;
-}
-.back-to-top:hover {
-    background: var(--fes-blue);
-    color: var(--gold);
-    transform: translateY(-3px);
-}
-@media (max-width: 768px) {
-    .back-to-top {
-        width: 45px;
-        height: 45px;
-        font-size: 18px;
-        bottom: 75px; /* فوق زر الموسيقى في الجوال */
-        right: 18px;
-    }
-}
+
+        .lightbox-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 36, 56, 0.95); z-index: 10000; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+        .lightbox-overlay.show { opacity: 1; visibility: visible; }
+        .lightbox-content { position: relative; max-width: 90%; max-height: 85vh; display: flex; align-items: center; justify-content: center; }
+        .lightbox-image { max-width: 100%; max-height: 85vh; border-radius: 12px; border: 3px solid var(--gold); box-shadow: 0 0 40px rgba(0,0,0,0.6); transform: scale(0.9); transition: transform 0.3s ease; object-fit: contain; }
+        .lightbox-overlay.show .lightbox-image { transform: scale(1); }
+        .lightbox-prev, .lightbox-next { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(201, 162, 39, 0.8); color: #fff; border: none; width: 45px; height: 45px; border-radius: 50%; font-size: 20px; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; z-index: 10001; }
+        .lightbox-prev { right: -60px; }
+        .lightbox-next { left: -60px; }
+        .lightbox-prev:hover, .lightbox-next:hover { background: var(--gold); transform: translateY(-50%) scale(1.1); }
+        .lightbox-close { position: absolute; top: -50px; right: 0; color: #fff; font-size: 35px; cursor: pointer; transition: 0.3s; }
+        .lightbox-close:hover { color: var(--gold); transform: scale(1.2); }
+
+        @media (max-width: 768px) { 
+            .site-logo { font-size: 28px; } 
+            .section-title { font-size: 24px; } 
+            .dishes-grid { grid-template-columns: 1fr; } 
+            .container { padding: 15px 10px; } 
+            .whatsapp-float { width: 55px; height: 55px; font-size: 26px; bottom: 18px; left: 18px; } 
+            .music-btn { width: 45px; height: 45px; font-size: 18px; bottom: 18px; right: 18px; } 
+            .back-to-top { width: 45px; height: 45px; font-size: 18px; bottom: 75px; right: 18px; }
+            .lightbox-content { max-width: 95%; } 
+            .lightbox-prev { right: -15px; width: 35px; height: 35px; font-size: 16px; } 
+            .lightbox-next { left: -15px; width: 35px; height: 35px; font-size: 16px; } 
+            .lightbox-close { top: -45px; right: 5px; font-size: 30px; }
+        }
     </style>
 </head>
 <body>
-<audio id="bgMusic" loop><source src="https://ia600505.us.archive.org/4/items/cut-627sec/%D9%82%D8%B5%D9%8A%D8%AF%D8%A9%20%D8%A7%D9%84%D8%B2%D8%B1%D8%AF%D8%A9%20%D9%84%D9%84%D9%81%D9%86%D8%A7%D9%86%20%D9%85%D8%AD%D9%85%D8%AF%20%D8%A8%D8%B1%D9%83%D8%A7%D9%85%20%D8%B1%D8%AD%D9%85%D9%87%20%D8%A7%D9%84%D9%84%D9%91%D9%87_%5Bcut_627sec%5D.mp3" type="audio/mpeg"></audio>
+<audio id="bgMusic" loop preload="auto"><source src="https://ia600505.us.archive.org/4/items/cut-627sec/%D9%82%D8%B5%D9%8A%D8%AF%D8%A9%20%D8%A7%D9%84%D8%B2%D8%B1%D8%AF%D8%A9%20%D9%84%D9%84%D9%81%D9%86%D8%A7%D9%86%20%D9%85%D8%AD%D9%85%D8%AF%20%D8%A8%D8%B1%D9%83%D8%A7%D9%85%20%D8%B1%D8%AD%D9%85%D9%87%20%D8%A7%D9%84%D9%84%D9%91%D9%87_%5Bcut_627sec%5D.mp3" type="audio/mpeg"></audio>
 <button class="music-btn" id="musicToggle" title="إيقاف/تشغيل الموسيقى"><i class="fas fa-volume-up" id="musicIcon"></i></button>
 
 <header class="site-header">
@@ -109,13 +110,30 @@
     <a href="index.html" class="back-link"><i class="fas fa-arrow-right"></i> العودة إلى قائمة الأصناف</a>
     <h2 class="section-title">البسطيلة</h2>
     <p class="section-subtitle">تشكيلة من البسطيلة الفاسية المورقة</p>
-    
+
     <div class="dishes-grid">
+
         <!-- الطبق 1: بسطيلة دجاج حلوة -->
         <div class="dish-card">
-            <div class="dish-image">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/uTDDdAWyIdxyzwQx.jpg" />
-                <span class="dish-badge">حلوة</span>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_1" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762467/bastila-djaj-7loua.png" alt="طبق بسطيلة دجاج حلوة" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">حلوة</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_1', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762467/bastila-djaj-7loua.png', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762467/bastila-djaj-7loua.png" alt="بسطيلة دجاج حلوة - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_1', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762468/bastila-djaj-7loua-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762468/bastila-djaj-7loua-riad.jpg" alt="بسطيلة دجاج حلوة - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_1', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762469/bastila-djaj-7loua-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762469/bastila-djaj-7loua-carte.jpg" alt="بسطيلة دجاج حلوة - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_1', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762467/bastila-djaj-7loua-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762467/bastila-djaj-7loua-delivri.jpg" alt="بسطيلة دجاج حلوة - التوصيل" loading="lazy" />
+                    </div>
+                </div>
             </div>
             <div class="dish-body">
                 <h3 class="dish-title">البسطيلة دجاج حلوة</h3>
@@ -126,9 +144,25 @@
 
         <!-- الطبق 2: بسطيلة دجاج وشعرية مالحة -->
         <div class="dish-card">
-            <div class="dish-image">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/uTDDdAWyIdxyzwQx.jpg" />
-                <span class="dish-badge">مالحة</span>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_2" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762476/bastilat-djaj-cha3riya-mal7a.jpg" alt="طبق بسطيلة دجاج وشعرية مالحة" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">مالحة</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_2', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762476/bastilat-djaj-cha3riya-mal7a.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762476/bastilat-djaj-cha3riya-mal7a.jpg" alt="بسطيلة دجاج وشعرية مالحة - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_2', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762479/bastilat-djaj-cha3riya-mal7a-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762479/bastilat-djaj-cha3riya-mal7a-riad.jpg" alt="بسطيلة دجاج وشعرية مالحة - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_2', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762477/bastilat-djaj-cha3riya-mal7a-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762477/bastilat-djaj-cha3riya-mal7a-carte.jpg" alt="بسطيلة دجاج وشعرية مالحة - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_2', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762477/bastilat-djaj-cha3riya-mal7a-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762477/bastilat-djaj-cha3riya-mal7a-delivri.jpg" alt="بسطيلة دجاج وشعرية مالحة - التوصيل" loading="lazy" />
+                    </div>
+                </div>
             </div>
             <div class="dish-body">
                 <h3 class="dish-title">البسطيلة دجاج وشعرية مالحة</h3>
@@ -139,9 +173,25 @@
 
         <!-- الطبق 3: بسطيلة الحوت -->
         <div class="dish-card">
-            <div class="dish-image">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/hVpeWjNFNYUNgzwE.jpg" />
-                <span class="dish-badge">بحري</span>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_3" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762469/bastila-hout.png" alt="طبق بسطيلة الحوت" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">بحري</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_3', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762469/bastila-hout.png', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762469/bastila-hout.png" alt="بسطيلة الحوت - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_3', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762472/bastila-hout-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762472/bastila-hout-riad.jpg" alt="بسطيلة الحوت - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_3', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762470/bastila-hout-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762470/bastila-hout-carte.jpg" alt="بسطيلة الحوت - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_3', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762468/bastila-hout-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762468/bastila-hout-delivri.jpg" alt="بسطيلة الحوت - التوصيل" loading="lazy" />
+                    </div>
+                </div>
             </div>
             <div class="dish-body">
                 <h3 class="dish-title">البسطيلة الحوت</h3>
@@ -152,9 +202,25 @@
 
         <!-- الطبق 4: بسطيلة الجوهرة -->
         <div class="dish-card">
-            <div class="dish-image">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/uTDDdAWyIdxyzwQx.jpg" />
-                <span class="dish-badge">فاخرة</span>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_4" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762470/bastila-jawhrat.png" alt="طبق بسطيلة الجوهرة" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">فاخرة</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_4', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762470/bastila-jawhrat.png', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762470/bastila-jawhrat.png" alt="بسطيلة الجوهرة - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_4', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762477/bastila-jawhrat-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762477/bastila-jawhrat-riad.jpg" alt="بسطيلة الجوهرة - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_4', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762470/bastila-jawhrat-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762470/bastila-jawhrat-carte.jpg" alt="بسطيلة الجوهرة - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_4', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762471/bastila-jawhrat-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762471/bastila-jawhrat-delivri.jpg" alt="بسطيلة الجوهرة - التوصيل" loading="lazy" />
+                    </div>
+                </div>
             </div>
             <div class="dish-body">
                 <h3 class="dish-title">البسطيلة الجوهرة</h3>
@@ -165,9 +231,25 @@
 
         <!-- الطبق 5: بساطل بلديين -->
         <div class="dish-card">
-            <div class="dish-image">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/hVpeWjNFNYUNgzwE.jpg" />
-                <span class="dish-badge">بلدي</span>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_5" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762480/bsatel-baldiyin.jpg" alt="طبق بساطل بلديين" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">بلدي</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_5', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762480/bsatel-baldiyin.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762480/bsatel-baldiyin.jpg" alt="بساطل بلديين - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_5', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762481/bsatel-baldiyin-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762481/bsatel-baldiyin-riad.jpg" alt="بساطل بلديين - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_5', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762480/bsatel-baldiyin-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762480/bsatel-baldiyin-carte.jpg" alt="بساطل بلديين - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_5', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762482/bsatel-baldiyin-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762482/bsatel-baldiyin-delivri.jpg" alt="بساطل بلديين - التوصيل" loading="lazy" />
+                    </div>
+                </div>
             </div>
             <div class="dish-body">
                 <h3 class="dish-title">بساطل بلديين</h3>
@@ -178,9 +260,25 @@
 
         <!-- الطبق 6: بساطل رومين -->
         <div class="dish-card">
-            <div class="dish-image">
-                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030558506/uTDDdAWyIdxyzwQx.jpg" />
-                <span class="dish-badge">رومين</span>
+            <div class="dish-gallery-container">
+                <div class="main-image-container">
+                    <img class="main-display-image" id="mainImage_6" src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762484/bsatel-romiyin.jpg" alt="طبق بساطل رومين" loading="lazy" onerror="this.src='images/placeholder.jpg'" />
+                    <span class="dish-badge">رومين</span>
+                </div>
+                <div class="thumbnails-row">
+                    <div class="thumbnail-wrapper active" onclick="changeMainImage('mainImage_6', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762484/bsatel-romiyin.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762484/bsatel-romiyin.jpg" alt="بساطل رومين - الطبق" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_6', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762487/bsatel-romiyin-riad.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762487/bsatel-romiyin-riad.jpg" alt="بساطل رومين - عرض الرياض" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_6', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762485/bsatel-romiyin-carte.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762485/bsatel-romiyin-carte.jpg" alt="بساطل رومين - البطاقة" loading="lazy" />
+                    </div>
+                    <div class="thumbnail-wrapper" onclick="changeMainImage('mainImage_6', 'https://res.cloudinary.com/aclc2s2z/image/upload/v1794762487/bsatel-romiyin-delivri.jpg', this)">
+                        <img src="https://res.cloudinary.com/aclc2s2z/image/upload/v1794762487/bsatel-romiyin-delivri.jpg" alt="بساطل رومين - التوصيل" loading="lazy" />
+                    </div>
+                </div>
             </div>
             <div class="dish-body">
                 <h3 class="dish-title">بساطل رومين</h3>
@@ -188,32 +286,143 @@
                 <a class="btn-order" href="https://wa.me/212699312690?text=أريد%20طلب%20بساطل%20رومين"><i class="fab fa-whatsapp"></i> اطلب الآن</a>
             </div>
         </div>
+
     </div>
 </div>
-<!-- زر العودة إلى الأعلى -->
-<a href="#" class="back-to-top" id="backToTop" title="العودة إلى الأعلى">
-    <i class="fas fa-arrow-up"></i>
-</a>
+
+<a href="#" class="back-to-top" id="backToTop" title="العودة إلى الأعلى"><i class="fas fa-arrow-up"></i></a>
 <a href="https://wa.me/212699312690" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 <footer class="site-footer"><div class="footer-bottom">© 2025 دار الإدريسي - بنة زمان — جميع الحقوق محفوظة</div></footer>
-<script>(function() { var music = document.getElementById('bgMusic'); var toggleBtn = document.getElementById('musicToggle'); var icon = document.getElementById('musicIcon'); var isPlaying = false; document.addEventListener('click', function start() { if (!isPlaying && music) { music.volume = 0.3; music.play().then(function() { isPlaying = true; icon.className = 'fas fa-volume-up'; }).catch(function() {}); } document.removeEventListener('click', start); }, { once: true }); if (toggleBtn) { toggleBtn.addEventListener('click', function(e) { e.stopPropagation(); if (music.paused) { music.play(); isPlaying = true; icon.className = 'fas fa-volume-up'; } else { music.pause(); isPlaying = false; icon.className = 'fas fa-volume-mute'; } }); } })();</script>
+
+<!-- نافذة تكبير الصور -->
+<div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-content">
+        <span class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></span>
+        <button class="lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-right"></i></button>
+        <img src="" alt="تكبير الصورة" class="lightbox-image" id="lightboxImg" />
+        <button class="lightbox-next" id="lightboxNext"><i class="fas fa-chevron-left"></i></button>
+    </div>
+</div>
+
 <script>
-    // زر العودة إلى الأعلى
+    function changeMainImage(mainImageId, newImageSrc, clickedThumbnail) {
+        var mainImg = document.getElementById(mainImageId);
+        if (mainImg) { mainImg.src = newImageSrc; }
+        var parent = clickedThumbnail.parentElement;
+        var thumbs = parent.getElementsByClassName('thumbnail-wrapper');
+        for (var i = 0; i < thumbs.length; i++) { thumbs[i].classList.remove('active'); }
+        clickedThumbnail.classList.add('active');
+    }
+
     (function() {
-        var backToTopBtn = document.getElementById('backToTop');
-        if (backToTopBtn) {
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    backToTopBtn.classList.add('show');
-                } else {
-                    backToTopBtn.classList.remove('show');
-                }
-            });
-            backToTopBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+        var music = document.getElementById('bgMusic');
+        var toggleBtn = document.getElementById('musicToggle');
+        var icon = document.getElementById('musicIcon');
+        var isPlaying = false;
+
+        function playMusic() {
+            if (!music) return;
+            music.volume = 0.3;
+            var p = music.play();
+            if (p && p.then) {
+                p.then(function() { isPlaying = true; icon.className = 'fas fa-volume-up'; })
+                 .catch(function() { isPlaying = false; icon.className = 'fas fa-volume-mute'; });
+            }
+        }
+
+        document.addEventListener('click', function firstClick() {
+            if (!isPlaying) playMusic();
+            document.removeEventListener('click', firstClick);
+        });
+
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                if (!music) return;
+                if (music.paused) { playMusic(); }
+                else { music.pause(); isPlaying = false; icon.className = 'fas fa-volume-mute'; }
             });
         }
+    })();
+
+    (function() {
+        var backToTopBtn = document.getElementById('backToTop');
+        if (!backToTopBtn) return;
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) { backToTopBtn.classList.add('show'); }
+            else { backToTopBtn.classList.remove('show'); }
+        });
+        backToTopBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+
+    (function() {
+        var lightbox = document.getElementById('lightbox');
+        var lightboxImg = document.getElementById('lightboxImg');
+        var lightboxClose = document.getElementById('lightboxClose');
+        var btnPrev = document.getElementById('lightboxPrev');
+        var btnNext = document.getElementById('lightboxNext');
+        
+        var currentGallery = []; 
+        var currentIndex = 0;    
+
+        document.querySelectorAll('.main-display-image').forEach(function(mainImg) {
+            mainImg.addEventListener('click', function() {
+                var card = this.closest('.dish-card');
+                var thumbs = card.querySelectorAll('.thumbnail-wrapper img');
+                
+                currentGallery = [];
+                thumbs.forEach(function(thumb) {
+                    currentGallery.push(thumb.src); 
+                });
+
+                currentIndex = currentGallery.indexOf(this.src);
+                if (currentIndex === -1) currentIndex = 0;
+
+                showImage(currentIndex);
+                lightbox.classList.add('show');
+            });
+        });
+
+        function showImage(index) {
+            if (currentGallery.length === 0) return;
+            if (index >= currentGallery.length) index = 0;
+            if (index < 0) index = currentGallery.length - 1;
+            
+            currentIndex = index;
+            lightboxImg.src = currentGallery[currentIndex];
+        }
+
+        btnNext.addEventListener('click', function(e) {
+            e.stopPropagation();
+            showImage(currentIndex + 1);
+        });
+        
+        btnPrev.addEventListener('click', function(e) {
+            e.stopPropagation();
+            showImage(currentIndex - 1);
+        });
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+                closeLightbox();
+            }
+        });
+
+        function closeLightbox() {
+            lightbox.classList.remove('show');
+            lightboxImg.src = "";
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (!lightbox.classList.contains('show')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') showImage(currentIndex + 1); 
+            if (e.key === 'ArrowRight') showImage(currentIndex - 1);
+        });
     })();
 </script>
 </body>
